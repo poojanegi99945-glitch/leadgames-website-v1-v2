@@ -58,7 +58,7 @@ export const SectionPairHeader: React.FC<SectionPairHeaderProps> = ({
 
       {/* Right tagline / subtitle */}
       {tagline && (
-        <span className="text-xs text-[#6B7280] font-medium hidden sm:inline-block font-sans">
+        <span className="text-xs text-[#6B7A99] font-medium hidden md:inline">
           {tagline}
         </span>
       )}

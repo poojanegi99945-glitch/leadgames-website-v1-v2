@@ -37,17 +37,17 @@ export const V2Menu: React.FC = () => {
   return (
     <header className="site-header border-y border-[#E4E7F0] bg-white">
       <div className="nav-shell">
-        <Link to="/v2" className="logo" aria-label="TezPlay home">
+        <Link to="/" className="logo" aria-label="TezPlay home">
           <BrandMark />
           <span>TezPlay</span>
         </Link>
 
         <nav className="desktop-nav" aria-label="Main navigation">
-          <a href="#v2-services">Services</a>
-          <a href="#v2-samples">Sample Experiences</a>
-          <a href="#v2-industries">Industries</a>
-          <a href="#v2-process">How We Work</a>
-          <a href="#v2-faq">FAQ</a>
+          <a href="#sec-services">Services</a>
+          <a href="#sec-samples">Sample Experiences</a>
+          <a href="#sec-industries">Industries</a>
+          <a href="#sec-process">How We Work</a>
+          <a href="#sec-faq">FAQ</a>
         </nav>
 
         <div className="nav-actions">
@@ -82,7 +82,7 @@ export const V2Hero: React.FC = () => {
             <a href="#v1-proposal" className="btn-primary text-sm py-3 px-6">
               Request a Proposal <ArrowRight size={16} />
             </a>
-            <a href="#v2-samples" className="btn-secondary text-sm py-3 px-6">
+            <a href="#sec-samples" className="btn-secondary text-sm py-3 px-6">
               Try a Sample Experience
             </a>
           </div>
