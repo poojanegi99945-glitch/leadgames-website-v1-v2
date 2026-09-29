@@ -1,0 +1,6 @@
+{
+  "name": "TezPlay — Interactive Lead Generation & AI Lead Qualification",
+  "description": "Turn clicks into qualified opportunities with interactive quizzes, assessments, calculators, gamified funnels, AI lead scoring, and automated multi-channel follow-up.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand: #5B3DF5;
+    --brand-strong: #4527D6;
+    --accent: #FF7A1A;
+    --ink: #0B1B3A;
+    --ink-soft: #45516B;
+    --bg: #FFFFFF;
+    --bg-soft: #F6F7FB;
+    --border: #E4E7F0;
+    --hot: #E5484D;
+    --warm: #F5A524;
+    --cold: #3B82F6;
+    --success: #12A150;
+    --error: #D92D20;
+    --font-heading: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--bg);
+    color: var(--ink-soft);
+    line-height: 1.65;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 2px;
+  }
+}
+
+/* Card & shadow styles */
+.card-soft {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px -2px rgba(11, 27, 58, 0.05);
+}
+
+.card-soft-hover {
+  transition: transform 250ms ease-out, box-shadow 250ms ease-out, border-color 250ms ease-out;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .card-soft-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -4px rgba(91, 61, 245, 0.08);
+    border-color: #CBD5E1;
+  }
+}
+
+/* Pill buttons */
+.btn-primary {
+  background-color: var(--brand);
+  color: #FFFFFF;
+  border-radius: 9999px;
+  padding: 0.625rem 1.375rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: background-color 200ms ease-out, transform 150ms ease-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  background-color: var(--brand-strong);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--ink);
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  padding: 0.625rem 1.375rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 200ms ease-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-soft);
+  border-color: #CBD5E1;
+}
+
+/* Tabular numerals */
+.font-tabular {
+  font-variant-numeric: tabular-nums;
+}
