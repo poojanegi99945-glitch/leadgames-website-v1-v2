@@ -9,6 +9,13 @@ import {
   Gauge,
   BarChart3,
   MessageSquareMore,
+  Stethoscope,
+  Building2,
+  Cloud,
+  GraduationCap,
+  Car,
+  ShoppingBag,
+  Briefcase,
 } from "lucide-react";
 import {
   AnalyticsPreview,
@@ -100,23 +107,31 @@ export const V2Hero: React.FC = () => {
   );
 };
 
-// V2 Industry Strip
+// V2 Industry Strip with icons like Version 1
+const v2Industries = [
+  { label: "Healthcare", icon: Stethoscope },
+  { label: "Real Estate", icon: Building2 },
+  { label: "SaaS & ERP", icon: Cloud },
+  { label: "Education", icon: GraduationCap },
+  { label: "Automotive", icon: Car },
+  { label: "E-commerce", icon: ShoppingBag },
+  { label: "Agencies", icon: Briefcase },
+];
+
 export const V2IndustryStrip: React.FC = () => {
   return (
     <div className="industry-strip">
       <div className="container">
         <span>Built for teams in</span>
-        {[
-          "Healthcare",
-          "Real Estate",
-          "SaaS & ERP",
-          "Education",
-          "Automotive",
-          "E-commerce",
-          "Agencies",
-        ].map((x) => (
-          <strong key={x}>{x}</strong>
-        ))}
+        {v2Industries.map((ind) => {
+          const Icon = ind.icon;
+          return (
+            <strong key={ind.label} className="inline-flex items-center gap-1.5">
+              <Icon size={14} className="text-[#5B3DF5] shrink-0" aria-hidden="true" />
+              <span>{ind.label}</span>
+            </strong>
+          );
+        })}
       </div>
     </div>
   );
@@ -415,12 +430,12 @@ export const V2Process: React.FC = () => {
 // V2 Analytics
 export const V2Analytics: React.FC = () => {
   return (
-    <section className="section dark-section" id="v2-analytics">
+    <section className="section dark-section bg-[#0B1B3A] text-white" id="v2-analytics">
       <div className="container">
-        <header className="section-heading">
-          <span className="eyebrow">Campaign clarity</span>
-          <h2>See More Than Form Submissions</h2>
-          <p>
+        <header className="section-heading mb-8">
+          <span className="eyebrow text-[#FF7A1A] font-bold text-xs uppercase tracking-wider block mb-2">Campaign clarity</span>
+          <h2 className="!text-white text-3xl sm:text-4xl font-extrabold tracking-tight my-2">See More Than Form Submissions</h2>
+          <p className="!text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed">
             Track starts, completions, qualified leads and cost per lead,
             and see where people drop off.
           </p>

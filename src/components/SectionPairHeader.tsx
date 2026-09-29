@@ -50,7 +50,7 @@ export const SectionPairHeader: React.FC<SectionPairHeaderProps> = ({
               {sectionNumber}
             </span>
           )}
-          <h2 className="text-sm sm:text-base font-bold text-[#0B1B3A]">
+          <h2 className="text-sm sm:text-base font-extrabold text-[#0B1B3A] font-heading tracking-tight">
             {title} – {isV1 ? 'Version 1' : 'Version 2'}
           </h2>
         </div>
@@ -58,7 +58,7 @@ export const SectionPairHeader: React.FC<SectionPairHeaderProps> = ({
 
       {/* Right tagline / subtitle */}
       {tagline && (
-        <span className="text-xs text-[#6B7280] font-medium hidden sm:inline-block">
+        <span className="text-xs text-[#6B7280] font-medium hidden sm:inline-block font-sans">
           {tagline}
         </span>
       )}

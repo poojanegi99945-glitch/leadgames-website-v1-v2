@@ -17,25 +17,23 @@ export const AnalyticsPreview: React.FC = () => {
     <section className="py-16 md:py-24 border-b border-[#E4E7F0] bg-[#F6F7FB]">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
+        {/* Section Header matching Version 2 */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="text-xs font-bold uppercase tracking-widest text-[#5B3DF5] mb-2">
-            Conversion Attribution
-          </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#0B1B3A] tracking-tight font-heading">
+          <span className="v2-eyebrow mb-2">Conversion attribution</span>
+          <h2 className="v2-heading-lg mb-3">
             See More Than Form Submissions
           </h2>
-          <p className="mt-3 text-base text-[#45516B] leading-relaxed">
+          <p className="v2-body-lead mx-auto">
             Track starts, completions, qualified leads and cost per lead, and see where people drop off.
           </p>
 
           <div className="mt-5 flex items-center justify-center gap-3">
-            <span className="text-[11px] bg-white text-[#45516B] px-2.5 py-0.5 rounded-full border border-[#E4E7F0]">
+            <span className="v2-sample-badge">
               Sample data
             </span>
             <button
               onClick={() => setViewMode(viewMode === 'chart' ? 'table' : 'chart')}
-              className="text-xs text-[#5B3DF5] hover:text-[#4527D6] font-semibold flex items-center gap-1 focus:outline-none"
+              className="text-xs text-[#5B3DF5] hover:text-[#4527D6] font-bold flex items-center gap-1.5 focus:outline-none"
             >
               <Table className="w-3.5 h-3.5" />
               <span>{viewMode === 'chart' ? 'View as accessible table' : 'View as chart bars'}</span>
@@ -44,13 +42,13 @@ export const AnalyticsPreview: React.FC = () => {
         </div>
 
         {/* Analytics Card */}
-        <div className="card-soft p-6 sm:p-8 bg-white max-w-3xl mx-auto shadow-sm">
+        <div className="bg-white rounded-2xl border border-[#E4E7F0] p-6 sm:p-8 max-w-3xl mx-auto shadow-xl">
           
           <div className="flex items-center justify-between pb-4 border-b border-[#E4E7F0] mb-6">
             <div>
-              <span className="text-xs font-bold text-[#0B1B3A] uppercase tracking-wider">
+              <strong className="text-xs font-bold text-[#0B1B3A] uppercase tracking-wider block font-heading">
                 Funnel Progression Benchmark
-              </span>
+              </strong>
               <p className="text-[11px] text-[#45516B]">Interactive qualification funnel performance</p>
             </div>
 
@@ -59,9 +57,9 @@ export const AnalyticsPreview: React.FC = () => {
                 <button
                   key={dim}
                   onClick={() => setSelectedDimension(dim)}
-                  className={`px-2.5 py-1 rounded capitalize font-medium transition-colors ${
+                  className={`px-3 py-1 rounded-lg capitalize font-bold transition-all ${
                     selectedDimension === dim
-                      ? 'bg-[#5B3DF5] text-white'
+                      ? 'bg-[#0B1B3A] text-white shadow-xs'
                       : 'text-[#45516B] hover:bg-[#F6F7FB]'
                   }`}
                 >

@@ -12,15 +12,13 @@ export const ProofSection: React.FC<ProofSectionProps> = ({ onProposalClick }) =
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="max-w-2xl mx-auto space-y-4">
-          <div className="text-xs font-bold uppercase tracking-widest text-[#5B3DF5]">
-            Verified Track Record
-          </div>
+          <span className="v2-eyebrow mb-2">Verified track record</span>
 
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1B3A] tracking-tight font-heading">
+          <h2 className="v2-heading-lg mb-3">
             Case Studies Are on the Way
           </h2>
 
-          <p className="text-base text-[#45516B] leading-relaxed">
+          <p className="v2-body-lead mx-auto">
             We're preparing detailed case studies. Want your campaign to be among the first we feature? Request a proposal.
           </p>
 
@@ -28,7 +26,7 @@ export const ProofSection: React.FC<ProofSectionProps> = ({ onProposalClick }) =
             <a
               href="#proposal"
               onClick={onProposalClick}
-              className="btn-primary text-xs"
+              className="btn-primary text-xs font-bold rounded-full px-6 py-2.5 shadow-sm"
             >
               <span>Request a Proposal</span>
               <ArrowRight className="w-3.5 h-3.5" />

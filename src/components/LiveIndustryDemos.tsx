@@ -17,46 +17,44 @@ export const LiveIndustryDemos: React.FC<LiveIndustryDemosProps> = ({ onProposal
     <section className="py-16 md:py-24 border-b border-[#E4E7F0] bg-[#F6F7FB]">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
+        {/* Section Header matching Version 2 */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="text-xs font-bold uppercase tracking-widest text-[#5B3DF5] mb-2">
-            In-Depth Funnel Walks
-          </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#0B1B3A] tracking-tight font-heading">
-            Sample: See Qualification in Action
+          <span className="v2-eyebrow mb-2">In-depth funnel walks</span>
+          <h2 className="v2-heading-lg mb-3">
+            See Qualification in Action
           </h2>
-          <p className="mt-3 text-base text-[#45516B] leading-relaxed">
+          <p className="v2-body-lead mx-auto">
             Test full interactive funnels across three key sectors to experience how responses map into qualified lead dossiers.
           </p>
 
           {/* Tab buttons */}
-          <div className="mt-6 inline-flex items-center p-1 rounded-full bg-white border border-[#E4E7F0] shadow-2xs">
+          <div className="mt-6 inline-flex flex-wrap items-center justify-center p-1.5 rounded-2xl bg-white border border-[#E4E7F0] shadow-sm gap-1">
             <button
               onClick={() => setActiveTab('healthcare')}
-              className={`px-4 py-2 rounded-full text-xs font-semibold transition-all ${
+              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
                 activeTab === 'healthcare'
-                  ? 'bg-[#5B3DF5] text-white shadow-xs'
-                  : 'text-[#45516B] hover:text-[#0B1B3A]'
+                  ? 'bg-[#0B1B3A] text-white shadow-sm ring-2 ring-[#0B1B3A]/20'
+                  : 'text-[#45516B] hover:text-[#0B1B3A] hover:bg-[#F6F7FB]'
               }`}
             >
               Healthcare & Clinics
             </button>
             <button
               onClick={() => setActiveTab('realestate')}
-              className={`px-4 py-2 rounded-full text-xs font-semibold transition-all ${
+              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
                 activeTab === 'realestate'
-                  ? 'bg-[#5B3DF5] text-white shadow-xs'
-                  : 'text-[#45516B] hover:text-[#0B1B3A]'
+                  ? 'bg-[#0B1B3A] text-white shadow-sm ring-2 ring-[#0B1B3A]/20'
+                  : 'text-[#45516B] hover:text-[#0B1B3A] hover:bg-[#F6F7FB]'
               }`}
             >
               Real Estate
             </button>
             <button
               onClick={() => setActiveTab('saas')}
-              className={`px-4 py-2 rounded-full text-xs font-semibold transition-all ${
+              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
                 activeTab === 'saas'
-                  ? 'bg-[#5B3DF5] text-white shadow-xs'
-                  : 'text-[#45516B] hover:text-[#0B1B3A]'
+                  ? 'bg-[#0B1B3A] text-white shadow-sm ring-2 ring-[#0B1B3A]/20'
+                  : 'text-[#45516B] hover:text-[#0B1B3A] hover:bg-[#F6F7FB]'
               }`}
             >
               SaaS & ERP

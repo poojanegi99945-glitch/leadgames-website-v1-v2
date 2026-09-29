@@ -9,15 +9,13 @@ export const FaqSection: React.FC = () => {
     <section id="faq" className="py-16 md:py-24 border-b border-[#E4E7F0] bg-[#F6F7FB]">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
+        {/* Section Header matching Version 2 */}
         <div className="text-center mb-12">
-          <div className="text-xs font-bold uppercase tracking-widest text-[#5B3DF5] mb-2">
-            Questions & Answers
-          </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#0B1B3A] tracking-tight font-heading">
+          <span className="v2-eyebrow mb-2">Questions & answers</span>
+          <h2 className="v2-heading-lg mb-3">
             Frequently Asked Questions
           </h2>
-          <p className="mt-3 text-base text-[#45516B]">
+          <p className="v2-body-lead mx-auto">
             Clear details on our done-for-you service, qualification logic, and campaign setup.
           </p>
         </div>
@@ -29,13 +27,13 @@ export const FaqSection: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="card-soft bg-white overflow-hidden transition-all"
+                className="bg-white rounded-2xl border border-[#E4E7F0] overflow-hidden shadow-xs transition-all hover:border-[#CBD5E1]"
               >
                 <button
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? null : idx)}
                   aria-expanded={isOpen}
-                  className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-[#0B1B3A] hover:text-[#5B3DF5] transition-colors focus:outline-none"
+                  className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-[#0B1B3A] font-heading hover:text-[#5B3DF5] transition-colors focus:outline-none"
                 >
                   <span>{item.q}</span>
                   <ChevronDown

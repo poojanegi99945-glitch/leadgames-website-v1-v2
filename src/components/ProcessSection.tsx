@@ -9,15 +9,13 @@ export const ProcessSection: React.FC = () => {
     <section id="process" className="py-16 md:py-24 border-b border-[#E4E7F0] bg-white">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
+        {/* Section Header matching Version 2 */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="text-xs font-bold uppercase tracking-widest text-[#5B3DF5] mb-2">
-            Execution Roadmap
-          </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#0B1B3A] tracking-tight font-heading">
+          <span className="v2-eyebrow mb-2">Execution roadmap</span>
+          <h2 className="v2-heading-lg mb-3">
             A Clear Process, From Idea to Optimized Campaign
           </h2>
-          <p className="mt-3 text-base text-[#45516B] leading-relaxed">
+          <p className="v2-body-lead mx-auto">
             We handle the strategy, visual design, custom development, integrations, and ongoing conversion optimization.
           </p>
         </div>
@@ -29,17 +27,17 @@ export const ProcessSection: React.FC = () => {
             return (
               <div
                 key={step.step}
-                className="card-soft p-5 bg-[#F6F7FB] flex flex-col justify-between hover:border-[#CBD5E1] transition-all relative group"
+                className="bg-white rounded-2xl border border-[#E4E7F0] p-5 shadow-xs flex flex-col justify-between hover:shadow-md hover:-translate-y-1 transition-all relative group"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="w-8 h-8 rounded-full bg-white border border-[#E4E7F0] text-[#5B3DF5] font-bold text-xs flex items-center justify-center font-mono">
+                    <span className="w-8 h-8 rounded-xl bg-[#F6F7FB] border border-[#E4E7F0] text-[#5B3DF5] font-extrabold text-xs flex items-center justify-center font-mono">
                       0{step.step}
                     </span>
                     <Icon className="w-4 h-4 text-[#5B3DF5]" />
                   </div>
 
-                  <h3 className="text-sm font-bold text-[#0B1B3A]">
+                  <h3 className="text-sm font-bold text-[#0B1B3A] font-heading">
                     {step.title}
                   </h3>
 
@@ -48,7 +46,7 @@ export const ProcessSection: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-[#E4E7F0] text-[11px] font-semibold text-[#5B3DF5]">
+                <div className="mt-4 pt-3 border-t border-[#E4E7F0] text-[11px] font-bold text-[#5B3DF5]">
                   {step.focus}
                 </div>
               </div>

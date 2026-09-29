@@ -122,15 +122,13 @@ export const ProposalSection: React.FC<ProposalSectionProps> = ({
           </div>
         )}
 
-        {/* Section Header */}
+        {/* Section Header matching Version 2 */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="text-xs font-bold uppercase tracking-widest text-[#5B3DF5] mb-2">
-            Start Your Campaign
-          </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#0B1B3A] tracking-tight font-heading">
+          <span className="v2-eyebrow mb-2">Start your campaign</span>
+          <h2 className="v2-heading-lg mb-3">
             Your Next Lead Should Tell You More Than Their Phone Number.
           </h2>
-          <p className="mt-3 text-base text-[#45516B] leading-relaxed">
+          <p className="v2-body-lead mx-auto">
             Tell us about your goals and we'll propose an interactive campaign that captures intent, qualifies leads and follows up automatically.
           </p>
         </div>
@@ -140,8 +138,8 @@ export const ProposalSection: React.FC<ProposalSectionProps> = ({
           
           {/* Left Column: What Happens Next & Direct Contact */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="card-soft p-6 sm:p-7 bg-[#F6F7FB] space-y-5">
-              <h3 className="text-base font-bold text-[#0B1B3A]">
+            <div className="bg-white rounded-2xl border border-[#E4E7F0] p-6 sm:p-7 shadow-xs space-y-5">
+              <h3 className="text-base font-bold text-[#0B1B3A] font-heading">
                 What Happens Next
               </h3>
 
@@ -151,7 +149,7 @@ export const ProposalSection: React.FC<ProposalSectionProps> = ({
                     1
                   </span>
                   <div>
-                    <strong className="text-[#0B1B3A] block">We review your request.</strong>
+                    <strong className="text-[#0B1B3A] block font-heading">We review your request.</strong>
                     <span className="text-[#45516B]">We assess your audience, offer, and existing follow-up process.</span>
                   </div>
                 </li>
@@ -161,7 +159,7 @@ export const ProposalSection: React.FC<ProposalSectionProps> = ({
                     2
                   </span>
                   <div>
-                    <strong className="text-[#0B1B3A] block">We reply with a proposal outline.</strong>
+                    <strong className="text-[#0B1B3A] block font-heading">We reply with a proposal outline.</strong>
                     <span className="text-[#45516B]">You receive a custom funnel structure, question sequencing, and transparent pricing.</span>
                   </div>
                 </li>
@@ -171,7 +169,7 @@ export const ProposalSection: React.FC<ProposalSectionProps> = ({
                     3
                   </span>
                   <div>
-                    <strong className="text-[#0B1B3A] block">We agree scope and build.</strong>
+                    <strong className="text-[#0B1B3A] block font-heading">We agree scope and build.</strong>
                     <span className="text-[#45516B]">Our team handles copy, interactive design, custom development, and CRM connections.</span>
                   </div>
                 </li>
@@ -179,8 +177,8 @@ export const ProposalSection: React.FC<ProposalSectionProps> = ({
             </div>
 
             {/* Direct Contact Placeholders */}
-            <div className="card-soft p-5 bg-white space-y-2.5 text-xs">
-              <span className="font-bold text-[#0B1B3A] block">Prefer direct outreach?</span>
+            <div className="bg-white rounded-2xl border border-[#E4E7F0] p-5 shadow-xs space-y-2.5 text-xs">
+              <strong className="font-bold text-[#0B1B3A] block font-heading">Prefer direct outreach?</strong>
               <div className="flex items-center gap-2 text-[#45516B]">
                 <Mail className="w-4 h-4 text-[#5B3DF5]" />
                 <span>Email: <strong className="text-[#0B1B3A] font-mono">{siteConfig.contact.email}</strong></span>
@@ -194,7 +192,7 @@ export const ProposalSection: React.FC<ProposalSectionProps> = ({
 
           {/* Right Column: Conversational 3-Step Proposal Form */}
           <div className="lg:col-span-7">
-            <div className="card-soft p-6 sm:p-8 bg-white border border-[#E4E7F0] shadow-sm">
+            <div className="bg-white rounded-2xl border border-[#E4E7F0] p-6 sm:p-8 shadow-xl">
               
               {/* Progress Indicator */}
               <div className="mb-6">

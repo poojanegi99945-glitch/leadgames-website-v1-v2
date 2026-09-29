@@ -128,16 +128,14 @@ export const SampleExperiencesSection: React.FC = () => {
     <section id="samples" className="py-16 md:py-24 border-b border-[#E4E7F0] bg-[#F6F7FB]">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
+        {/* Section Header matching Version 2 */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="text-xs font-bold uppercase tracking-widest text-[#5B3DF5] mb-2">
-            Interactive Formats
-          </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#0B1B3A] tracking-tight font-heading">
+          <span className="v2-eyebrow mb-2">Live samples</span>
+          <h2 className="v2-heading-lg mb-3">
             Try Them Yourself
           </h2>
-          <p className="mt-3 text-base text-[#45516B] leading-relaxed">
-            Live samples of what we build. All content here is demo content.
+          <p className="v2-body-lead mx-auto">
+            Live interactive samples of the high-conversion experiences we build. Everything here is demo content.
           </p>
         </div>
 
@@ -154,9 +152,9 @@ export const SampleExperiencesSection: React.FC = () => {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
-              className={`px-4 py-2 rounded-full text-xs font-semibold transition-all focus:outline-none ${
+              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all focus:outline-none ${
                 activeTab === tab.id
-                  ? 'bg-[#5B3DF5] text-white shadow-sm'
+                  ? 'bg-[#0B1B3A] text-white shadow-sm ring-2 ring-[#0B1B3A]/20'
                   : 'bg-white border border-[#E4E7F0] text-[#45516B] hover:text-[#0B1B3A] hover:bg-[#F6F7FB]'
               }`}
             >
@@ -166,14 +164,14 @@ export const SampleExperiencesSection: React.FC = () => {
         </div>
 
         {/* Interactive Playable Sandbox Box */}
-        <div className="card-soft p-6 sm:p-8 bg-white min-h-[380px] flex items-center justify-center">
+        <div className="bg-white rounded-2xl border border-[#E4E7F0] shadow-xl p-6 sm:p-10 min-h-[400px] flex items-center justify-center">
           
           {/* 1. Spin & Win */}
           {activeTab === 'spin' && (
             <div className="w-full max-w-lg text-center space-y-4">
-              <div className="flex items-center justify-between text-xs">
-                <span className="font-bold text-[#0B1B3A]">Playable Spin & Win Demo</span>
-                <span className="text-[11px] bg-[#F6F7FB] px-2 py-0.5 rounded border border-[#E4E7F0]">Sample data</span>
+              <div className="flex items-center justify-between text-xs pb-3 border-b border-[#E4E7F0]">
+                <strong className="font-bold text-[#0B1B3A] font-heading">Playable Spin & Win Demo</strong>
+                <span className="v2-sample-badge">Sample Demo</span>
               </div>
 
               {/* Wheel Container */}
@@ -213,9 +211,9 @@ export const SampleExperiencesSection: React.FC = () => {
           {/* 2. Scratch & Win */}
           {activeTab === 'scratch' && (
             <div className="w-full max-w-sm text-center space-y-4">
-              <div className="flex items-center justify-between text-xs">
-                <span className="font-bold text-[#0B1B3A]">Scratch & Win Demo</span>
-                <span className="text-[11px] bg-[#F6F7FB] px-2 py-0.5 rounded border border-[#E4E7F0]">Sample data</span>
+              <div className="flex items-center justify-between text-xs pb-3 border-b border-[#E4E7F0]">
+                <strong className="font-bold text-[#0B1B3A] font-heading">Scratch & Win Demo</strong>
+                <span className="v2-sample-badge">Sample Demo</span>
               </div>
 
               <div className="relative w-full h-44 rounded-xl border border-[#E4E7F0] overflow-hidden flex items-center justify-center bg-[#F6F7FB]">
@@ -254,9 +252,9 @@ export const SampleExperiencesSection: React.FC = () => {
           {/* 3. Quiz Funnel */}
           {activeTab === 'quiz' && (
             <div className="w-full max-w-md space-y-4">
-              <div className="flex items-center justify-between text-xs">
-                <span className="font-bold text-[#0B1B3A]">2-Question Quiz Demo</span>
-                <span className="text-[11px] bg-[#F6F7FB] px-2 py-0.5 rounded border border-[#E4E7F0]">Sample data</span>
+              <div className="flex items-center justify-between text-xs pb-3 border-b border-[#E4E7F0]">
+                <strong className="font-bold text-[#0B1B3A] font-heading">2-Question Quiz Demo</strong>
+                <span className="v2-sample-badge">Sample Demo</span>
               </div>
 
               {quizStep === 0 && (
@@ -322,16 +320,16 @@ export const SampleExperiencesSection: React.FC = () => {
           {/* 4. Calculator */}
           {activeTab === 'calculator' && (
             <div className="w-full max-w-md space-y-4">
-              <div className="flex items-center justify-between text-xs">
-                <span className="font-bold text-[#0B1B3A]">Interactive Calculator Demo</span>
-                <span className="text-[11px] bg-[#F6F7FB] px-2 py-0.5 rounded border border-[#E4E7F0]">Illustrative estimate</span>
+              <div className="flex items-center justify-between text-xs pb-3 border-b border-[#E4E7F0]">
+                <strong className="font-bold text-[#0B1B3A] font-heading">Interactive Calculator Demo</strong>
+                <span className="v2-sample-badge">Illustrative Estimate</span>
               </div>
 
               <div className="space-y-3 text-xs">
                 <div>
                   <div className="flex justify-between mb-1 text-[#0B1B3A]">
-                    <span>Monthly Traffic:</span>
-                    <span className="font-bold font-tabular">{trafficVal.toLocaleString()} visitors</span>
+                    <span className="font-medium">Monthly Traffic:</span>
+                    <span className="font-bold font-mono">{trafficVal.toLocaleString()} visitors</span>
                   </div>
                   <input
                     type="range"
@@ -346,8 +344,8 @@ export const SampleExperiencesSection: React.FC = () => {
 
                 <div>
                   <div className="flex justify-between mb-1 text-[#0B1B3A]">
-                    <span>Average Deal Size:</span>
-                    <span className="font-bold font-tabular">₹{dealVal.toLocaleString()}</span>
+                    <span className="font-medium">Average Deal Size:</span>
+                    <span className="font-bold font-mono">₹{dealVal.toLocaleString()}</span>
                   </div>
                   <input
                     type="range"
@@ -362,8 +360,8 @@ export const SampleExperiencesSection: React.FC = () => {
               </div>
 
               <div className="p-3.5 bg-[#F6F7FB] border border-[#E4E7F0] rounded-xl text-xs flex justify-between items-center">
-                <span className="text-[#45516B]">Projected Qualified Leads / mo:</span>
-                <span className="text-base font-extrabold text-[#5B3DF5] font-tabular">
+                <span className="text-[#45516B] font-medium">Projected Qualified Leads / mo:</span>
+                <span className="text-base font-extrabold text-[#5B3DF5] font-mono">
                   ~{Math.round((trafficVal * 0.045))} leads
                 </span>
               </div>
@@ -373,9 +371,9 @@ export const SampleExperiencesSection: React.FC = () => {
           {/* 5. Memory Match */}
           {activeTab === 'memory' && (
             <div className="w-full max-w-sm space-y-3 text-center">
-              <div className="flex items-center justify-between text-xs">
-                <span className="font-bold text-[#0B1B3A]">Memory Match Interactive Game</span>
-                <span className="text-[11px] bg-[#F6F7FB] px-2 py-0.5 rounded border border-[#E4E7F0]">Sample data</span>
+              <div className="flex items-center justify-between text-xs pb-3 border-b border-[#E4E7F0]">
+                <strong className="font-bold text-[#0B1B3A] font-heading">Memory Match Interactive Game</strong>
+                <span className="v2-sample-badge">Sample Demo</span>
               </div>
 
               <div className="grid grid-cols-4 gap-2">
@@ -384,9 +382,9 @@ export const SampleExperiencesSection: React.FC = () => {
                     key={c.id}
                     type="button"
                     onClick={() => handleCardClick(i)}
-                    className={`h-16 rounded-lg text-xs font-bold transition-all border ${
+                    className={`h-16 rounded-xl text-xs font-bold transition-all border ${
                       c.flipped || c.matched
-                        ? 'bg-[#5B3DF5] text-white border-[#5B3DF5]'
+                        ? 'bg-[#5B3DF5] text-white border-[#5B3DF5] shadow-xs'
                         : 'bg-[#F6F7FB] text-[#45516B] border-[#E4E7F0] hover:bg-slate-200'
                     }`}
                   >
@@ -401,18 +399,18 @@ export const SampleExperiencesSection: React.FC = () => {
           {/* 6. Assessment Gauge */}
           {activeTab === 'assessment' && (
             <div className="w-full max-w-md space-y-4">
-              <div className="flex items-center justify-between text-xs">
-                <span className="font-bold text-[#0B1B3A]">Assessment Score Gauge Demo</span>
-                <span className="text-[11px] bg-[#F6F7FB] px-2 py-0.5 rounded border border-[#E4E7F0]">Sample data</span>
+              <div className="flex items-center justify-between text-xs pb-3 border-b border-[#E4E7F0]">
+                <strong className="font-bold text-[#0B1B3A] font-heading">Assessment Score Gauge Demo</strong>
+                <span className="v2-sample-badge">Sample Demo</span>
               </div>
 
               <div className="grid grid-cols-3 gap-2 text-xs">
                 <div>
-                  <label className="text-[10px] text-[#45516B] block mb-1">Intent:</label>
+                  <label className="text-[10px] text-[#45516B] block mb-1 font-semibold">Intent:</label>
                   <select
                     value={assessQ1}
                     onChange={(e) => setAssessQ1(e.target.value)}
-                    className="w-full bg-[#F6F7FB] border border-[#E4E7F0] rounded p-1 text-xs"
+                    className="w-full bg-[#F6F7FB] border border-[#E4E7F0] rounded-lg p-1.5 text-xs font-medium"
                   >
                     <option value="High">High</option>
                     <option value="Moderate">Moderate</option>
@@ -420,11 +418,11 @@ export const SampleExperiencesSection: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="text-[10px] text-[#45516B] block mb-1">Budget Set:</label>
+                  <label className="text-[10px] text-[#45516B] block mb-1 font-semibold">Budget Set:</label>
                   <select
                     value={assessQ2}
                     onChange={(e) => setAssessQ2(e.target.value)}
-                    className="w-full bg-[#F6F7FB] border border-[#E4E7F0] rounded p-1 text-xs"
+                    className="w-full bg-[#F6F7FB] border border-[#E4E7F0] rounded-lg p-1.5 text-xs font-medium"
                   >
                     <option value="Yes">Yes</option>
                     <option value="Exploring">Exploring</option>
@@ -432,11 +430,11 @@ export const SampleExperiencesSection: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="text-[10px] text-[#45516B] block mb-1">Timeline:</label>
+                  <label className="text-[10px] text-[#45516B] block mb-1 font-semibold">Timeline:</label>
                   <select
                     value={assessQ3}
                     onChange={(e) => setAssessQ3(e.target.value)}
-                    className="w-full bg-[#F6F7FB] border border-[#E4E7F0] rounded p-1 text-xs"
+                    className="w-full bg-[#F6F7FB] border border-[#E4E7F0] rounded-lg p-1.5 text-xs font-medium"
                   >
                     <option value="Immediate">Immediate</option>
                     <option value="Later">Later</option>
@@ -446,8 +444,8 @@ export const SampleExperiencesSection: React.FC = () => {
 
               <div className="p-4 bg-[#F6F7FB] border border-[#E4E7F0] rounded-xl flex items-center justify-between">
                 <div>
-                  <div className="text-xs text-[#45516B]">Dynamic Assessment Score</div>
-                  <div className="text-2xl font-bold text-[#0B1B3A] font-tabular mt-0.5">
+                  <div className="text-xs text-[#45516B] font-medium">Dynamic Assessment Score</div>
+                  <div className="text-2xl font-extrabold text-[#0B1B3A] font-mono mt-0.5">
                     {assessScore} / 100
                   </div>
                 </div>
