@@ -432,10 +432,14 @@ export const V2Analytics: React.FC = () => {
   return (
     <section className="section dark-section bg-[#0B1B3A] text-white" id="v2-analytics">
       <div className="container">
-        <header className="section-heading mb-8">
-          <span className="eyebrow text-[#FF7A1A] font-bold text-xs uppercase tracking-wider block mb-2">Campaign clarity</span>
-          <h2 className="!text-white text-3xl sm:text-4xl font-extrabold tracking-tight my-2">See More Than Form Submissions</h2>
-          <p className="!text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed">
+        <header className="section-heading mb-10">
+          <span className="eyebrow text-[#FF7A1A] font-extrabold text-xs uppercase tracking-widest block mb-2.5">
+            Campaign clarity
+          </span>
+          <h2 className="!text-white text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight my-2.5">
+            See More Than Form Submissions
+          </h2>
+          <p className="!text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed mt-2">
             Track starts, completions, qualified leads and cost per lead,
             and see where people drop off.
           </p>

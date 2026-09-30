@@ -1659,34 +1659,36 @@ export function AnalyticsPreview() {
   const activeStage = current.stages[selectedStageIdx] || current.stages[0];
 
   return (
-    <div className="analytics !bg-[#0D1829] !border-slate-800 text-white shadow-2xl p-4 sm:p-6 lg:p-8 rounded-2xl">
-      {/* Header Bar */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-700/80">
+    <div className="bg-[#0D1829] border border-slate-800/90 text-white shadow-2xl p-5 sm:p-7 lg:p-8 rounded-2xl relative">
+      {/* Top Header Bar */}
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
         <div>
           <div className="flex flex-wrap items-center gap-2 mb-2">
-            <span className="px-2.5 py-1 rounded-full bg-[#FF7A1A]/20 text-[#FF9E4D] border border-[#FF7A1A]/40 text-xs font-bold uppercase tracking-wider">
+            <span className="px-2.5 py-0.5 rounded-full bg-[#FF7A1A]/15 text-[#FF9E4D] border border-[#FF7A1A]/30 text-[11px] font-bold uppercase tracking-wider">
               Live Benchmark
             </span>
-            <span className="text-xs text-slate-300 font-medium">Simulated 8-Week Campaign Data</span>
+            <span className="text-slate-500 font-bold" aria-hidden="true">·</span>
+            <span className="text-xs text-slate-400 font-medium">Simulated 8-Week Campaign Data</span>
           </div>
-          <h3 className="text-xl sm:text-2xl font-bold !text-white font-heading m-0 tracking-tight">
+          <h3 className="text-xl sm:text-2xl font-extrabold !text-white font-heading m-0 tracking-tight">
             Funnel Conversion & Drop-off Intelligence
           </h3>
-          <p className="text-xs sm:text-sm !text-slate-300 m-0 mt-1">
-            Segment: <strong className="!text-white font-semibold">{current.source}</strong>
+          <p className="text-xs sm:text-sm text-slate-300 m-0 mt-1.5 flex items-center gap-1.5">
+            <span className="text-slate-400">Traffic Source:</span>
+            <strong className="text-white font-semibold">{current.source}</strong>
           </p>
         </div>
 
-        {/* View Switcher & Period Indicator */}
-        <div className="flex items-center gap-2 self-start md:self-auto">
-          <div className="inline-flex rounded-lg bg-slate-800/90 p-1 border border-slate-700">
+        {/* View Switcher Controls */}
+        <div className="flex items-center gap-2 self-start md:self-auto shrink-0">
+          <div className="inline-flex rounded-xl bg-slate-900/90 p-1 border border-slate-700/80 shadow-inner">
             <button
               type="button"
               onClick={() => setViewMode("visual")}
-              className={`px-3 py-1.5 rounded-md text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
                 viewMode === "visual"
-                  ? "bg-[#5B3DF5] !text-white shadow-sm"
-                  : "!text-slate-300 hover:!text-white hover:bg-slate-700/50"
+                  ? "bg-[#5B3DF5] text-white shadow-sm"
+                  : "text-slate-400 hover:text-white hover:bg-slate-800/60"
               }`}
             >
               <BarChart3 size={14} />
@@ -1695,10 +1697,10 @@ export function AnalyticsPreview() {
             <button
               type="button"
               onClick={() => setViewMode("table")}
-              className={`px-3 py-1.5 rounded-md text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
                 viewMode === "table"
-                  ? "bg-[#5B3DF5] !text-white shadow-sm"
-                  : "!text-slate-300 hover:!text-white hover:bg-slate-700/50"
+                  ? "bg-[#5B3DF5] text-white shadow-sm"
+                  : "text-slate-400 hover:text-white hover:bg-slate-800/60"
               }`}
             >
               <Table size={14} />
@@ -1709,10 +1711,14 @@ export function AnalyticsPreview() {
       </div>
 
       {/* Traffic Channel Segments Filter */}
-      <div className="pt-5 pb-3">
-        <div className="text-xs font-bold !text-slate-300 uppercase tracking-wider mb-2.5 flex flex-wrap items-center gap-2">
-          <span>Traffic Channel Breakdown</span>
-          <span className="text-slate-400 font-normal text-xs">• Click to inspect different ad channels</span>
+      <div className="pt-5 pb-2">
+        <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+          <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+            Traffic Channel Breakdown
+          </span>
+          <span className="text-xs text-slate-400 hidden sm:inline">
+            Click to inspect different advertising channels
+          </span>
         </div>
         <div className="flex flex-wrap gap-2">
           {Object.entries(analyticsDatasets).map(([key, data]) => {
@@ -1722,10 +1728,10 @@ export function AnalyticsPreview() {
                 key={key}
                 type="button"
                 onClick={() => setActiveDataset(key)}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all border cursor-pointer ${
+                className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all border cursor-pointer ${
                   isSelected
-                    ? "bg-[#5B3DF5] border-[#7559FF] !text-white shadow-md shadow-[#5B3DF5]/30 scale-102"
-                    : "bg-slate-800/80 border-slate-700 !text-slate-200 hover:bg-slate-700 hover:!text-white"
+                    ? "bg-[#5B3DF5] border-[#5B3DF5] text-white shadow-md shadow-[#5B3DF5]/25"
+                    : "bg-slate-800/50 border-slate-700/70 text-slate-300 hover:bg-slate-800 hover:text-white"
                 }`}
               >
                 {data.label}
@@ -1736,56 +1742,68 @@ export function AnalyticsPreview() {
       </div>
 
       {/* Top Level Metric Summary Cards */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 my-6">
-        <div className="p-4 rounded-xl bg-slate-800/60 border border-slate-700/80 relative overflow-hidden group hover:border-slate-600 transition-all">
-          <div className="flex items-center justify-between !text-slate-300 text-xs mb-1.5 font-medium">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 my-6">
+        {/* Card 1: Total Visitors */}
+        <div className="p-4 sm:p-5 rounded-xl bg-slate-800/40 border border-slate-700/60 hover:border-slate-600 transition-all flex flex-col justify-between">
+          <div className="flex items-center justify-between text-xs text-slate-400 mb-2 font-medium">
             <span>Total Visitors</span>
-            <Users size={15} className="text-[#00C2A0]" />
+            <div className="w-6 h-6 rounded-md bg-white/[0.06] flex items-center justify-center text-[#00C2A0]">
+              <Users size={14} />
+            </div>
           </div>
-          <div className="text-2xl sm:text-3xl font-black !text-white font-heading">
+          <div className="text-2xl sm:text-3xl font-extrabold text-white font-mono tracking-tight my-1">
             {current.visitors.toLocaleString()}
           </div>
-          <div className="text-xs text-[#00C2A0] font-semibold mt-1.5 flex items-center gap-1">
+          <div className="text-xs text-[#00C2A0] font-semibold flex items-center gap-1 mt-1">
             <TrendingUp size={13} />
             <span>100% Top of Funnel</span>
           </div>
         </div>
 
-        <div className="p-4 rounded-xl bg-slate-800/60 border border-slate-700/80 relative overflow-hidden group hover:border-slate-600 transition-all">
-          <div className="flex items-center justify-between !text-slate-300 text-xs mb-1.5 font-medium">
+        {/* Card 2: Full Completion */}
+        <div className="p-4 sm:p-5 rounded-xl bg-slate-800/40 border border-slate-700/60 hover:border-slate-600 transition-all flex flex-col justify-between">
+          <div className="flex items-center justify-between text-xs text-slate-400 mb-2 font-medium">
             <span>Full Completion</span>
-            <CheckCircle2 size={15} className="text-[#8B6BFF]" />
+            <div className="w-6 h-6 rounded-md bg-white/[0.06] flex items-center justify-center text-[#8B6BFF]">
+              <CheckCircle2 size={14} />
+            </div>
           </div>
-          <div className="text-2xl sm:text-3xl font-black !text-white font-heading">
+          <div className="text-2xl sm:text-3xl font-extrabold text-white font-mono tracking-tight my-1">
             {Math.round((current.completions / current.visitors) * 100)}%
           </div>
-          <div className="text-xs !text-slate-300 mt-1.5 font-medium">
-            <strong className="!text-white font-bold">{current.completions.toLocaleString()}</strong> completed all steps
+          <div className="text-xs text-slate-300 font-medium mt-1">
+            <strong className="text-white font-bold">{current.completions.toLocaleString()}</strong> completed all steps
           </div>
         </div>
 
-        <div className="p-4 rounded-xl bg-slate-800/60 border border-slate-700/80 relative overflow-hidden group hover:border-slate-600 transition-all">
-          <div className="flex items-center justify-between !text-slate-300 text-xs mb-1.5 font-medium">
+        {/* Card 3: Qualified Leads */}
+        <div className="p-4 sm:p-5 rounded-xl bg-slate-800/40 border border-slate-700/60 hover:border-slate-600 transition-all flex flex-col justify-between">
+          <div className="flex items-center justify-between text-xs text-slate-400 mb-2 font-medium">
             <span>Qualified Leads</span>
-            <Target size={15} className="text-[#FF7A1A]" />
+            <div className="w-6 h-6 rounded-md bg-white/[0.06] flex items-center justify-center text-[#FF7A1A]">
+              <Target size={14} />
+            </div>
           </div>
-          <div className="text-2xl sm:text-3xl font-black !text-white font-heading">
+          <div className="text-2xl sm:text-3xl font-extrabold text-white font-mono tracking-tight my-1">
             {current.qualified.toLocaleString()}
           </div>
-          <div className="text-xs text-[#FF9E4D] font-semibold mt-1.5">
+          <div className="text-xs text-[#FF9E4D] font-semibold mt-1">
             {Math.round((current.qualified / current.visitors) * 100)}% conversion to SQL
           </div>
         </div>
 
-        <div className="p-4 rounded-xl bg-slate-800/60 border border-slate-700/80 relative overflow-hidden group hover:border-slate-600 transition-all">
-          <div className="flex items-center justify-between !text-slate-300 text-xs mb-1.5 font-medium">
+        {/* Card 4: Cost Per Lead */}
+        <div className="p-4 sm:p-5 rounded-xl bg-slate-800/40 border border-slate-700/60 hover:border-slate-600 transition-all flex flex-col justify-between">
+          <div className="flex items-center justify-between text-xs text-slate-400 mb-2 font-medium">
             <span>Cost Per Lead (CPL)</span>
-            <Zap size={15} className="text-[#00C2A0]" />
+            <div className="w-6 h-6 rounded-md bg-white/[0.06] flex items-center justify-center text-[#00C2A0]">
+              <Zap size={14} />
+            </div>
           </div>
-          <div className="text-2xl sm:text-3xl font-black !text-white font-heading">
+          <div className="text-2xl sm:text-3xl font-extrabold text-white font-mono tracking-tight my-1">
             {current.cpl}
           </div>
-          <div className="text-xs !text-slate-300 mt-1.5">
+          <div className="text-xs text-slate-300 mt-1">
             vs <span className="line-through text-slate-400">{current.benchmarkCpl}</span> standard form
           </div>
         </div>
@@ -1793,10 +1811,10 @@ export function AnalyticsPreview() {
 
       {/* Main Content: Visual Funnel OR Drop-Off Audit Table */}
       {viewMode === "visual" ? (
-        <div className="space-y-4 pt-2">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs !text-slate-300 mb-2 font-medium">
-            <span>Stage Progression & Retention</span>
-            <span className="text-slate-400">Click any bar to inspect drop-off diagnostics</span>
+        <div className="space-y-4 pt-1">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs text-slate-400 mb-2 font-medium">
+            <span className="font-semibold text-slate-300">Stage Progression & Retention</span>
+            <span>Click any stage below to inspect drop-off diagnostics</span>
           </div>
 
           <div className="space-y-3">
@@ -1806,35 +1824,35 @@ export function AnalyticsPreview() {
                 <div
                   key={stg.name}
                   onClick={() => setSelectedStageIdx(i)}
-                  className={`p-3.5 sm:p-4 rounded-xl border transition-all cursor-pointer ${
+                  className={`p-4 sm:p-5 rounded-xl border transition-all cursor-pointer ${
                     isSelected
                       ? "bg-slate-800/90 border-[#5B3DF5] shadow-lg shadow-[#5B3DF5]/20 ring-1 ring-[#5B3DF5]"
-                      : "bg-slate-800/40 border-slate-700/70 hover:bg-slate-800/70 hover:border-slate-600"
+                      : "bg-slate-800/35 border-slate-700/60 hover:bg-slate-800/65 hover:border-slate-600"
                   }`}
                 >
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2.5">
-                    <div className="flex items-center gap-2.5">
-                      <span className="w-6 h-6 rounded-full bg-slate-700 !text-white text-xs font-bold flex items-center justify-center font-mono shrink-0">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 mb-3">
+                    <div className="flex items-center gap-3">
+                      <span className="w-6 h-6 rounded-full bg-slate-700 text-white text-xs font-bold flex items-center justify-center font-mono shrink-0">
                         {stg.stepNum}
                       </span>
-                      <strong className="text-sm sm:text-base font-bold !text-white font-heading">
+                      <strong className="text-sm sm:text-base font-bold text-white font-heading">
                         {stg.name}
                       </strong>
                     </div>
 
                     <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs">
-                      <span className="font-mono !text-white font-bold">
+                      <span className="font-mono text-white font-bold">
                         {stg.count.toLocaleString()} users
                       </span>
-                      <span className="px-2.5 py-0.5 rounded-full bg-slate-700/80 !text-white font-semibold text-xs border border-slate-600">
+                      <span className="px-2.5 py-0.5 rounded-full bg-slate-700/70 text-slate-200 font-semibold text-xs border border-slate-600/70 font-mono">
                         {stg.percent}% of visitors
                       </span>
                       {stg.dropFromPrev > 0 ? (
-                        <span className="px-2.5 py-0.5 rounded-full bg-rose-500/20 !text-rose-200 border border-rose-500/40 font-semibold text-xs">
+                        <span className="px-2.5 py-0.5 rounded-full bg-rose-500/15 text-rose-300 border border-rose-500/30 font-semibold text-xs font-mono">
                           -{stg.dropFromPrev}% stage drop
                         </span>
                       ) : (
-                        <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/20 !text-emerald-200 border border-emerald-500/40 font-semibold text-xs">
+                        <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 font-semibold text-xs font-mono">
                           Initial entry
                         </span>
                       )}
@@ -1842,7 +1860,7 @@ export function AnalyticsPreview() {
                   </div>
 
                   {/* Visual Progress Bar */}
-                  <div className="w-full bg-slate-900/90 border border-slate-700/60 h-3.5 rounded-full overflow-hidden p-0.5">
+                  <div className="w-full bg-slate-900/90 border border-slate-700/50 h-3 rounded-full overflow-hidden p-0.5">
                     <div
                       className="h-full rounded-full transition-all duration-500 ease-out bg-gradient-to-r from-[#5B3DF5] via-[#8B6BFF] to-[#FF7A1A]"
                       style={{ width: `${Math.max(stg.percent, 3)}%` }}
@@ -1857,21 +1875,23 @@ export function AnalyticsPreview() {
           <div className="mt-5 p-4 sm:p-5 rounded-xl bg-gradient-to-r from-[#5B3DF5]/20 via-slate-800/60 to-slate-800/30 border border-[#5B3DF5]/40 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
             <div className="space-y-1.5">
               <div className="flex flex-wrap items-center gap-2">
-                <span className="px-2.5 py-1 rounded bg-[#5B3DF5] !text-white font-bold text-[11px] uppercase tracking-wide">
+                <span className="px-2.5 py-0.5 rounded-md bg-[#5B3DF5] text-white font-bold text-[10px] uppercase tracking-wider">
                   Stage {activeStage.stepNum} Diagnostic
                 </span>
-                <strong className="text-base font-bold !text-white">
+                <strong className="text-sm sm:text-base font-bold text-white">
                   {activeStage.name}
                 </strong>
               </div>
-              <p className="text-xs sm:text-sm !text-slate-200 max-w-2xl m-0 leading-relaxed font-normal">
+              <p className="text-xs sm:text-sm text-slate-200 max-w-2xl m-0 leading-relaxed font-normal">
                 {activeStage.diagnostic}
               </p>
             </div>
 
-            <div className="shrink-0 text-left md:text-right pt-2 md:pt-0 border-t md:border-t-0 border-slate-700/60 w-full md:w-auto">
-              <span className="text-xs text-slate-300 block font-medium">Step Retention</span>
-              <strong className="text-xl font-bold !text-emerald-400 font-mono">
+            <div className="shrink-0 bg-slate-900/60 border border-slate-700/60 rounded-xl px-4 py-2.5 text-left md:text-center w-full md:w-auto min-w-[140px]">
+              <span className="text-[11px] text-slate-400 block font-medium uppercase tracking-wider">
+                Step Retention
+              </span>
+              <strong className="text-xl sm:text-2xl font-extrabold text-emerald-400 font-mono">
                 {activeStage.stepNum === 1
                   ? "100%"
                   : `${Math.round(100 - activeStage.dropFromPrev)}%`}
@@ -1884,27 +1904,27 @@ export function AnalyticsPreview() {
         <div className="overflow-x-auto pt-2 rounded-xl border border-slate-700/80 bg-slate-900/60">
           <table className="min-w-[680px] w-full text-xs sm:text-sm text-left border-collapse">
             <thead>
-              <tr className="border-b border-slate-700 bg-slate-800/80 text-slate-200 font-bold">
-                <th className="py-3.5 px-4 font-bold">Funnel Stage</th>
-                <th className="py-3.5 px-4 font-bold">Volume</th>
-                <th className="py-3.5 px-4 font-bold">% of Traffic</th>
-                <th className="py-3.5 px-4 font-bold">Stage Drop-off</th>
-                <th className="py-3.5 px-4 font-bold">Dropped Users</th>
-                <th className="py-3.5 px-4 font-bold">Conversion Insight</th>
+              <tr className="border-b border-slate-700 bg-slate-800/80 text-slate-300 font-bold text-xs uppercase tracking-wider">
+                <th className="py-3 px-4">Funnel Stage</th>
+                <th className="py-3 px-4">Volume</th>
+                <th className="py-3 px-4">% of Traffic</th>
+                <th className="py-3 px-4">Stage Drop-off</th>
+                <th className="py-3 px-4">Dropped Users</th>
+                <th className="py-3 px-4">Conversion Insight</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-800">
               {current.stages.map((stg) => (
                 <tr key={stg.name} className="hover:bg-slate-800/40 transition-colors">
-                  <td className="py-3.5 px-4 font-semibold !text-white">
+                  <td className="py-3.5 px-4 font-semibold text-white">
                     <span className="text-slate-400 mr-2 font-mono">{stg.stepNum}.</span>
                     {stg.name}
                   </td>
-                  <td className="py-3.5 px-4 font-mono font-bold !text-white">
+                  <td className="py-3.5 px-4 font-mono font-bold text-white">
                     {stg.count.toLocaleString()}
                   </td>
                   <td className="py-3.5 px-4">
-                    <span className="px-2.5 py-1 rounded bg-slate-700 !text-white font-bold text-xs">
+                    <span className="px-2.5 py-1 rounded bg-slate-700/80 text-white font-bold text-xs font-mono">
                       {stg.percent}%
                     </span>
                   </td>
@@ -1914,13 +1934,13 @@ export function AnalyticsPreview() {
                         -{stg.dropFromPrev}%
                       </span>
                     ) : (
-                      <span className="text-emerald-300 font-semibold">0%</span>
+                      <span className="text-emerald-300 font-semibold font-mono">0%</span>
                     )}
                   </td>
-                  <td className="py-3.5 px-4 font-mono !text-slate-300">
+                  <td className="py-3.5 px-4 font-mono text-slate-300">
                     {stg.dropCount > 0 ? `-${stg.dropCount.toLocaleString()}` : "0"}
                   </td>
-                  <td className="py-3.5 px-4 !text-slate-300 text-xs max-w-xs leading-normal">
+                  <td className="py-3.5 px-4 text-slate-300 text-xs max-w-xs leading-normal">
                     {stg.diagnostic}
                   </td>
                 </tr>
@@ -1931,11 +1951,11 @@ export function AnalyticsPreview() {
       )}
 
       {/* Strategic Takeaway Footer */}
-      <div className="mt-6 pt-5 border-t border-slate-700/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+      <div className="mt-6 pt-5 border-t border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
         <div className="flex items-center gap-2">
           <Sparkles size={16} className="text-[#FF7A1A] shrink-0" />
-          <span className="!text-slate-200">
-            <strong className="!text-white font-bold">CRO Finding:</strong> {current.topDropReason}
+          <span className="text-slate-300">
+            <strong className="text-white font-bold">CRO Finding:</strong> {current.topDropReason}
           </span>
         </div>
         <div className="text-xs text-slate-400">
