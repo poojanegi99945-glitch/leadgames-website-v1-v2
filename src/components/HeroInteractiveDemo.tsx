@@ -14,6 +14,7 @@ import {
   MessageSquare
 } from 'lucide-react';
 import { LeadScoreProfile } from '../types';
+import { submitProposal } from '../lib/submitProposal';
 
 interface HeroProps {
   onStartFunnel: () => void;
@@ -34,6 +35,8 @@ export const HeroInteractiveDemo: React.FC<HeroProps> = ({ onStartFunnel, onBook
 
   const [submittedLead, setSubmittedLead] = useState(false);
   const [leadPhone, setLeadPhone] = useState('');
+  const [isSubmittingLead, setIsSubmittingLead] = useState(false);
+  const [leadSubmitError, setLeadSubmitError] = useState('');
 
   // Dynamically calculate lead score based on answers
   const calculateScore = () => {
@@ -102,6 +105,43 @@ export const HeroInteractiveDemo: React.FC<HeroProps> = ({ onStartFunnel, onBook
     setCurrentStep(0);
     setSubmittedLead(false);
     setLeadPhone('');
+    setLeadSubmitError('');
+  };
+
+  const handleLeadSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    if (!leadPhone.trim()) return;
+
+    setIsSubmittingLead(true);
+    setLeadSubmitError('');
+
+    try {
+      await submitProposal({
+        source: 'hero-demo',
+        name: 'Hero Demo Lead',
+        email: `hero-demo-${Date.now()}@leadgames.local`,
+        phone: leadPhone,
+        companyName: 'Hero Interactive Demo',
+        industry: answers.industry,
+        goals: [answers.goal],
+        dealValue: answers.dealValue,
+        timeline: answers.timeline,
+        leadScore: currentScore,
+        notes: 'Hero interactive demo report unlock. Email not collected in this UI.',
+        wantsCall: false,
+        consentContact: true,
+        consentWhatsapp: true,
+      });
+      setSubmittedLead(true);
+    } catch (error) {
+      setLeadSubmitError(
+        error instanceof Error
+          ? error.message
+          : 'Unable to sync this lead. Please try again.',
+      );
+    } finally {
+      setIsSubmittingLead(false);
+    }
   };
 
   return (
@@ -319,10 +359,7 @@ export const HeroInteractiveDemo: React.FC<HeroProps> = ({ onStartFunnel, onBook
                 {/* Conversion Action */}
                 {!submittedLead ? (
                   <form 
-                    onSubmit={(e) => {
-                      e.preventDefault();
-                      if (leadPhone.trim()) setSubmittedLead(true);
-                    }}
+                    onSubmit={handleLeadSubmit}
                     className="mt-3.5 flex items-center gap-2"
                   >
                     <input
@@ -335,9 +372,10 @@ export const HeroInteractiveDemo: React.FC<HeroProps> = ({ onStartFunnel, onBook
                     />
                     <button
                       type="submit"
+                      disabled={isSubmittingLead}
                       className="px-3.5 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg text-xs font-semibold whitespace-nowrap transition-colors flex items-center gap-1.5"
                     >
-                      <span>Unlock Report</span>
+                      <span>{isSubmittingLead ? 'Syncing...' : 'Unlock Report'}</span>
                       <Send className="w-3 h-3" />
                     </button>
                   </form>
@@ -346,6 +384,9 @@ export const HeroInteractiveDemo: React.FC<HeroProps> = ({ onStartFunnel, onBook
                     <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                     <span>Report sent via WhatsApp! Lead record synced to CRM & assigned to VIP rep.</span>
                   </div>
+                )}
+                {leadSubmitError && (
+                  <p className="mt-2 text-xs text-rose-300">{leadSubmitError}</p>
                 )}
               </div>
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, ArrowRight, CheckCircle2, Sparkles, Send, ShieldCheck, Zap } from 'lucide-react';
+import { submitProposal } from '../lib/submitProposal';
 
 interface ModalProps {
   isOpen: boolean;
@@ -25,6 +26,8 @@ export const InteractiveQualificationModal: React.FC<ModalProps> = ({
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   if (!isOpen) return null;
 
@@ -32,9 +35,36 @@ export const InteractiveQualificationModal: React.FC<ModalProps> = ({
     if (step < 3) setStep(step + 1);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setSubmitError('');
+
+    try {
+      await submitProposal({
+        source: 'qualification-modal',
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        companyName: formData.name,
+        industry: formData.industry,
+        goals: [formData.goal],
+        monthlyTraffic: formData.monthlyTraffic,
+        notes: `Qualification modal mode: ${mode}`,
+        wantsCall: mode === 'demo',
+        consentContact: true,
+        consentWhatsapp: true,
+      });
+      setSubmitted(true);
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : 'Unable to submit your request. Please try again.',
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -205,11 +235,21 @@ export const InteractiveQualificationModal: React.FC<ModalProps> = ({
                 <div className="pt-2">
                   <button
                     type="submit"
+                    disabled={isSubmitting}
                     className="w-full py-3 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg shadow-indigo-600/30"
                   >
-                    <span>{mode === 'demo' ? 'Schedule VIP Walkthrough' : 'Generate My Interactive Funnel'}</span>
+                    <span>
+                      {isSubmitting
+                        ? 'Sending...'
+                        : mode === 'demo'
+                        ? 'Schedule VIP Walkthrough'
+                        : 'Generate My Interactive Funnel'}
+                    </span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
+                  {submitError && (
+                    <p className="text-xs text-rose-300 text-center">{submitError}</p>
+                  )}
                 </div>
               </form>
             )}
