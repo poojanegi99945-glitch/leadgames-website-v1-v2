@@ -16,10 +16,10 @@ export const ProblemSection: React.FC = () => {
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0B1B3A] tracking-tight font-heading">
             Static Forms Capture Details.{' '}
-            <span className="text-[#5B3DF5]">TezPlay Captures Intent.</span>
+            <span className="text-[#5B3DF5]">Lead Games.com Captures Intent.</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-[#45516B] leading-relaxed">
-            A static form tells you who submitted. An interactive TezPlay experience tells you{' '}
+            A static form tells you who submitted. An interactive Lead Games.com experience tells you{' '}
             <strong className="text-[#0B1B3A]">what they need</strong>,{' '}
             <strong className="text-[#0B1B3A]">why they need it</strong>, and{' '}
             <strong className="text-[#0B1B3A]">how ready they are to buy</strong>.
@@ -54,7 +54,7 @@ export const ProblemSection: React.FC = () => {
                 sliderPos > 60 ? 'bg-white shadow-xs text-[#0B1B3A] font-bold' : 'text-[#6B7280] hover:text-[#0B1B3A]'
               }`}
             >
-              TezPlay Funnel (75%)
+              Lead Games.com Funnel (75%)
             </button>
           </div>
         </div>
@@ -62,14 +62,14 @@ export const ProblemSection: React.FC = () => {
         {/* Interactive Before / After Split Showcase (Elevated Version 2 Aesthetic) */}
         <div className="relative rounded-2xl border border-[#E4E7F0] bg-white shadow-xl overflow-hidden min-h-[480px]">
           
-          {/* Right Pane: TezPlay Funnel (Dark Premium Experience) */}
+          {/* Right Pane: Lead Games.com Funnel (Dark Premium Experience) */}
           <div className="absolute inset-0 bg-[#0B1B3A] text-white p-6 sm:p-10 flex flex-col justify-between overflow-hidden">
             <div>
               <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-white/10 mb-6">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                   <span className="text-xs font-extrabold uppercase tracking-widest text-[#00C2A0]">
-                    TEZPLAY INTERACTIVE FUNNEL
+                    Lead Games.com INTERACTIVE FUNNEL
                   </span>
                 </div>
                 <div className="flex items-center gap-2 text-xs">
@@ -214,7 +214,7 @@ export const ProblemSection: React.FC = () => {
             value={sliderPos}
             onChange={(e) => setSliderPos(Number(e.target.value))}
             className="absolute inset-0 opacity-0 cursor-ew-resize w-full h-full z-40"
-            aria-label="Drag to compare plain form with TezPlay interactive funnel"
+            aria-label="Drag to compare plain form with Lead Games.com interactive funnel"
           />
         </div>
 
@@ -237,7 +237,7 @@ export const ProblemSection: React.FC = () => {
           <div className="p-5 rounded-xl border border-emerald-200 bg-emerald-50/50">
             <div className="flex items-center gap-2 mb-2">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
-              <strong className="text-sm font-bold text-[#0B1B3A]">TezPlay Interactive Funnels</strong>
+              <strong className="text-sm font-bold text-[#0B1B3A]">Lead Games.com Interactive Funnels</strong>
             </div>
             <p className="text-xs text-[#45516B] leading-relaxed mb-3">
               Goal · Verified Budget · Timeline · Urgency · Automatic Lead Score (Hot/Warm/Cold) routed to WhatsApp or CRM instantly.

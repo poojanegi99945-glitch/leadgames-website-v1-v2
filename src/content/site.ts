@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: 'TezPlay',
+  name: 'Lead Games.com',
   tagline: 'Interactive campaigns that turn visitors into qualified leads.',
   description: 'We build and manage gamified funnels, quizzes, assessments and calculators that capture, qualify and score leads, then automate WhatsApp and CRM follow-up.',
   framework: 'Play → Capture → Qualify → Score → Automate → Convert',

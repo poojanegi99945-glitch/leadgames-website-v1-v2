@@ -16,15 +16,15 @@ export const RoiCalculatorTool: React.FC<RoiCalculatorProps> = ({ onStartFunnel 
   const currentDeals = Math.round((currentLeads * closeRate) / 100);
   const currentRevenue = currentDeals * dealValue;
 
-  // With TezPlay Interactive Funnel (conservative 3.1x lead capture + higher qualification close rate boost)
-  const tezplayConversion = Number((currentConversion * 3.1).toFixed(1));
-  const tezplayLeads = Math.round((monthlyTraffic * tezplayConversion) / 100);
-  const tezplayCloseRate = Math.min(closeRate + 4, 35); // Qualified leads close better
-  const tezplayDeals = Math.round((tezplayLeads * tezplayCloseRate) / 100);
-  const tezplayRevenue = tezplayDeals * dealValue;
+  // With Lead Games.com Interactive Funnel (conservative 3.1x lead capture + higher qualification close rate boost)
+  const leadGamesConversion = Number((currentConversion * 3.1).toFixed(1));
+  const leadGamesLeads = Math.round((monthlyTraffic * leadGamesConversion) / 100);
+  const leadGamesCloseRate = Math.min(closeRate + 4, 35); // Qualified leads close better
+  const leadGamesDeals = Math.round((leadGamesLeads * leadGamesCloseRate) / 100);
+  const leadGamesRevenue = leadGamesDeals * dealValue;
 
-  const netNewLeads = tezplayLeads - currentLeads;
-  const netNewRevenueMonthly = tezplayRevenue - currentRevenue;
+  const netNewLeads = leadGamesLeads - currentLeads;
+  const netNewRevenueMonthly = leadGamesRevenue - currentRevenue;
   const netNewRevenueAnnual = netNewRevenueMonthly * 12;
 
   return (
@@ -40,7 +40,7 @@ export const RoiCalculatorTool: React.FC<RoiCalculatorProps> = ({ onStartFunnel 
             Interactive Funnel ROI & Lead Uplift Calculator
           </h2>
           <p className="mt-3.5 text-base text-slate-300">
-            See the exact pipeline impact of replacing your static lead form with a qualified, intent-driven TezPlay funnel.
+            See the exact pipeline impact of replacing your static lead form with a qualified, intent-driven Lead Games.com funnel.
           </p>
         </div>
 
@@ -159,7 +159,7 @@ export const RoiCalculatorTool: React.FC<RoiCalculatorProps> = ({ onStartFunnel 
                     Static: <span className="text-white font-mono-numbers font-semibold">{currentLeads}</span>
                   </div>
                   <div className="text-lg font-bold text-emerald-400 font-mono-numbers mt-0.5">
-                    TezPlay: {tezplayLeads}
+                    Lead Games.com: {leadGamesLeads}
                   </div>
                   <div className="text-[11px] text-emerald-400/90 mt-1 font-medium">
                     +{netNewLeads.toLocaleString()} new leads / mo
@@ -172,7 +172,7 @@ export const RoiCalculatorTool: React.FC<RoiCalculatorProps> = ({ onStartFunnel 
                     Static: <span className="text-white font-mono-numbers font-semibold">${currentRevenue.toLocaleString()}</span>
                   </div>
                   <div className="text-lg font-bold text-emerald-400 font-mono-numbers mt-0.5">
-                    TezPlay: ${tezplayRevenue.toLocaleString()}
+                    Lead Games.com: ${leadGamesRevenue.toLocaleString()}
                   </div>
                   <div className="text-[11px] text-emerald-400/90 mt-1 font-medium">
                     +${netNewRevenueMonthly.toLocaleString()} / mo

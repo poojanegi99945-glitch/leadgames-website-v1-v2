@@ -48,10 +48,12 @@ import { FunnelDemo, LeadScoreGauge, LeadStateBadge } from "./FunnelDemo";
 
 export function BrandMark() {
   return (
-    <span className="brand-mark" aria-hidden="true">
-      <span className="font-bold text-[#5B3DF5]">▶</span>
-      <i className="text-[#FF7A1A]">✦</i>
-    </span>
+    <img
+      src="/lead-games-logo.png"
+      alt=""
+      className="h-9 w-auto max-w-[170px] object-contain"
+      aria-hidden="true"
+    />
   );
 }
 
@@ -66,7 +68,7 @@ export function PhoneFrameDemo() {
       <div className="phone-frame">
         <div className="phone-notch" />
         <div className="phone-brand">
-          <BrandMark /> tezplay
+          <BrandMark />
         </div>
         <FunnelDemo compact />
       </div>
@@ -275,21 +277,21 @@ export function FormVsFunnelSlider() {
               value > 60 ? "bg-[#FF7A1A] text-white font-bold" : "text-[#6B7280] hover:text-[#0B1B3A]"
             }`}
           >
-            TezPlay Intent (75%)
+            Lead Games.com Intent (75%)
           </button>
         </div>
       </div>
 
       {/* Main Dual-Pane Comparison Canvas */}
       <div className="relative rounded-2xl border border-[#E4E7F0] bg-white shadow-2xl overflow-hidden min-h-[520px]">
-        {/* Right Pane: TezPlay Intent Funnel (Always rendered underneath in dark navy) */}
+        {/* Right Pane: Lead Games.com Intent Funnel (Always rendered underneath in dark navy) */}
         <div className="absolute inset-0 bg-[#0B1B3A] text-white p-6 sm:p-10 flex flex-col justify-between overflow-hidden">
           <div>
             <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-white/10 mb-6">
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#00C2A0] animate-pulse" />
                 <span className="text-xs font-black uppercase tracking-widest text-[#00C2A0]">
-                  TEZPLAY QUALIFICATION ENGINE
+                  Lead Games.com QUALIFICATION ENGINE
                 </span>
                 <span className="text-[11px] bg-[#FF7A1A]/20 text-[#FF7A1A] border border-[#FF7A1A]/30 px-2 py-0.5 rounded-full font-bold">
                   {data.industry} Funnel
@@ -424,7 +426,7 @@ export function FormVsFunnelSlider() {
 
         {/* Range Controller */}
         <input
-          aria-label="Drag to compare plain form with TezPlay interactive funnel"
+          aria-label="Drag to compare plain form with Lead Games.com interactive funnel"
           type="range"
           min="15"
           max="85"
@@ -1060,7 +1062,7 @@ export function AutomationFlow() {
                   </div>
                   <div>
                     <div className="flex items-center gap-1.5">
-                      <strong className="text-sm font-bold text-white">TezPlay Official Concierge</strong>
+                      <strong className="text-sm font-bold text-white">Lead Games.com Official Concierge</strong>
                       <CheckCheck size={14} className="text-[#25D366]" />
                     </div>
                     <span className="text-[11px] text-white/80 block">Verified Business Account · Online</span>
@@ -1268,7 +1270,7 @@ export function AutomationFlow() {
                 </div>
                 <div className="space-y-1">
                   <div className="flex items-center gap-2">
-                    <strong className="text-xs font-bold text-[#0B1B3A]">TezPlay Qualification Bot</strong>
+                    <strong className="text-xs font-bold text-[#0B1B3A]">Lead Games.com Qualification Bot</strong>
                     <span className="text-[10px] bg-[#E4E7F0] text-[#6B7280] px-1.5 py-0.5 rounded font-mono">APP</span>
                     <span className="text-[10px] text-[#8A94A6]">10:42 AM</span>
                   </div>

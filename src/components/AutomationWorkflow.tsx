@@ -37,7 +37,7 @@ export const AutomationWorkflow: React.FC = () => {
             Qualification Should Trigger Instant Action.
           </h2>
           <p className="mt-3.5 text-base text-slate-300">
-            Don't let qualified prospects wait in a static CRM queue. TezPlay triggers personalized WhatsApp messages, sales rep notifications, and CRM records within 30 seconds of completion.
+            Don't let qualified prospects wait in a static CRM queue. Lead Games.com triggers personalized WhatsApp messages, sales rep notifications, and CRM records within 30 seconds of completion.
           </p>
         </div>
 

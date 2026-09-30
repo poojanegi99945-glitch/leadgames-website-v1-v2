@@ -37,9 +37,8 @@ export const V2Menu: React.FC = () => {
   return (
     <header className="site-header border-y border-[#E4E7F0] bg-white">
       <div className="nav-shell">
-        <Link to="/" className="logo" aria-label="TezPlay home">
+        <Link to="/" className="logo" aria-label="Lead Games.com home">
           <BrandMark />
-          <span>TezPlay</span>
         </Link>
 
         <nav className="desktop-nav" aria-label="Main navigation">
@@ -144,7 +143,7 @@ export const V2Problem: React.FC = () => {
       <div className="container">
         <header className="section-heading">
           <span className="eyebrow">Why interactive</span>
-          <h2>Static Forms Capture Details. TezPlay Captures Intent.</h2>
+          <h2>Static Forms Capture Details. Lead Games.com Captures Intent.</h2>
           <p>
             A form tells you who submitted. An interactive experience tells
             you what they need and how ready they are.
@@ -549,7 +548,6 @@ export const V2Footer: React.FC = () => {
         <div>
           <div className="logo mb-3">
             <BrandMark />
-            <span className="font-bold text-white text-base ml-1">TezPlay</span>
           </div>
           <p>Interactive campaigns that capture, qualify and convert leads.</p>
           <address className="mt-2 text-xs font-mono not-italic">
@@ -601,7 +599,7 @@ export const V2Footer: React.FC = () => {
           <a href="#v2-menu" className="text-[#5B3DF5] font-semibold">
             Version 2 (Funnels Playbook)
           </a>
-          <a href="/tezplay-project.zip" download="tezplay-project.zip">
+          <a href="/tezplay-project.zip" download="leadgames-project.zip">
             Download Project (ZIP)
           </a>
         </div>
@@ -614,7 +612,7 @@ export const V2Footer: React.FC = () => {
       </div>
 
       <div className="container footer-bottom">
-        © {new Date().getFullYear()} TezPlay. All rights reserved.
+        © {new Date().getFullYear()} Lead Games.com. All rights reserved.
       </div>
     </footer>
   );

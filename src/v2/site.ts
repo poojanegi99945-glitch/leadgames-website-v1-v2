@@ -16,8 +16,8 @@ export const industries = [
 ] as const;
 
 export const faqs = [
-  ["What does TezPlay do?", "We design, build and manage interactive lead-generation campaigns—quizzes, assessments, calculators, games and recommendation funnels—that capture and qualify leads and automate follow-up."],
-  ["Is TezPlay software I can subscribe to?", "No. TezPlay is a done-for-you service. We build, launch and manage the campaign with you."],
+  ["What does Lead Games.com do?", "We design, build and manage interactive lead-generation campaigns—quizzes, assessments, calculators, games and recommendation funnels—that capture and qualify leads and automate follow-up."],
+  ["Is Lead Games.com software I can subscribe to?", "No. Lead Games.com is a done-for-you service. We build, launch and manage the campaign with you."],
   ["What is an interactive lead funnel?", "A short sequence of questions or interactions that ends with a personalized result and a lead capture, instead of a plain form."],
   ["How do you qualify leads?", "We collect details such as need, budget, location and timeline, then apply scoring rules agreed with your team to label each lead Hot, Warm or Cold."],
   ["Do you use AI?", "We use transparent, rule-based scoring as a foundation. Any AI-assisted recommendations would be described in your proposal."], // TODO(owner): confirm AI wording
@@ -33,7 +33,7 @@ export const stubRoutes: Record<string, { title: string; intro: string }> = {
   "/industries": { title: "Industry Solutions", intro: "Interactive lead journeys shaped around how your customers decide." },
   "/sample-experiences": { title: "Sample Experiences", intro: "Try examples of the quizzes, assessments, calculators and games we build." },
   "/how-we-work": { title: "How We Work", intro: "A clear path from campaign idea to launch and ongoing optimization." },
-  "/about": { title: "About TezPlay", intro: "We help teams learn more from every lead interaction." },
+  "/about": { title: "About Lead Games.com", intro: "We help teams learn more from every lead interaction." },
   "/case-studies": { title: "Case Studies", intro: "We’re preparing detailed case studies. Request a proposal to discuss your campaign." },
   "/resources": { title: "Resources", intro: "Practical guidance on interactive lead generation, qualification and follow-up." },
   "/contact": { title: "Book a Strategy Call", intro: "Tell us what you want your next campaign to achieve." },

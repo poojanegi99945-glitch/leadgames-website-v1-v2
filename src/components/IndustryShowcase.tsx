@@ -215,7 +215,7 @@ export const IndustryShowcase: React.FC = () => {
                 </h3>
 
                 <p className="text-sm text-slate-300">
-                  Real estate developers and brokers receive hundreds of non-serious calls. TezPlay qualifies budget, bedroom requirements, and buying timeline beforehand.
+                  Real estate developers and brokers receive hundreds of non-serious calls. Lead Games.com qualifies budget, bedroom requirements, and buying timeline beforehand.
                 </p>
 
                 {/* Micro Funnel Questions */}
@@ -373,7 +373,7 @@ export const IndustryShowcase: React.FC = () => {
                 <div className="space-y-2 text-xs">
                   <div className="flex justify-between py-1 border-b border-slate-900">
                     <span className="text-slate-400">Recommended Plan:</span>
-                    <span className="font-semibold text-white">TezPlay Enterprise Platform</span>
+                    <span className="font-semibold text-white">Lead Games.com Enterprise Platform</span>
                   </div>
                   <div className="flex justify-between py-1 border-b border-slate-900">
                     <span className="text-slate-400">Projected Pipeline Lift:</span>

@@ -71,7 +71,7 @@ export const PlatformEcosystem: React.FC = () => {
             One Platform. The Entire Lead Conversion Journey.
           </h2>
           <p className="mt-3.5 text-base text-slate-300">
-            From the initial interactive touchpoint to real-time qualification and CRM dispatch—TezPlay powers every step.
+            From the initial interactive touchpoint to real-time qualification and CRM dispatch—Lead Games.com powers every step.
           </p>
         </div>
 

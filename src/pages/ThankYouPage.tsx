@@ -14,7 +14,7 @@ export const ThankYouPage: React.FC = () => {
         </h1>
 
         <p className="text-xs text-[#45516B] leading-relaxed">
-          Thanks for reaching out to TezPlay. We will review your goals and industry parameters to draft your custom interactive campaign proposal.
+          Thanks for reaching out to Lead Games.com. We will review your goals and industry parameters to draft your custom interactive campaign proposal.
         </p>
 
         <p className="text-[11px] text-[#45516B]">

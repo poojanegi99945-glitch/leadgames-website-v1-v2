@@ -66,7 +66,7 @@ export const InteractiveQualificationModal: React.FC<ModalProps> = ({
                 {step === 3 && 'Where should we send your funnel strategy?'}
               </h3>
               <p className="text-xs text-slate-400 mt-1">
-                Step {step + 1} of 4 · Experience how TezPlay qualifies leads firsthand.
+                Step {step + 1} of 4 · Experience how Lead Games.com qualifies leads firsthand.
               </p>
             </div>
 

@@ -15,7 +15,7 @@ export interface ProposalPayload {
 
 export async function submitProposal(data: ProposalPayload): Promise<{ success: boolean; message: string }> {
   // TODO(owner): connect to backend
-  console.info('[TezPlay Proposal Submission Stub]', {
+  console.info('[Lead Games.com Proposal Submission Stub]', {
     timestamp: new Date().toISOString(),
     sanitizedPayload: {
       name: data.name,

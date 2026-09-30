@@ -134,7 +134,7 @@ export const JourneySection: React.FC = () => {
               </h3>
             </div>
             <span className="text-xs text-[#5B3DF5] font-semibold bg-[#5B3DF5]/5 px-3 py-1 rounded-full">
-              Built & Managed by TezPlay
+              Built & Managed by Lead Games.com
             </span>
           </div>
 

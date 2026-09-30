@@ -165,7 +165,7 @@ export const ExperienceLibrary: React.FC = () => {
                   Lead Qualification Quiz: What is your primary conversion bottleneck?
                 </h3>
                 <p className="text-sm text-slate-300">
-                  Quiz funnels gather specific pain points. Depending on what the user answers, TezPlay branches logic and personalizes the follow-up pitch.
+                  Quiz funnels gather specific pain points. Depending on what the user answers, Lead Games.com branches logic and personalizes the follow-up pitch.
                 </p>
 
                 <div className="space-y-2.5 pt-2">
@@ -335,7 +335,7 @@ export const ExperienceLibrary: React.FC = () => {
                   </div>
 
                   <div className="p-3 rounded-lg bg-indigo-950/40 border border-indigo-700/60">
-                    <div className="text-indigo-300">TezPlay Projected Leads</div>
+                    <div className="text-indigo-300">Lead Games.com Projected Leads</div>
                     <div className="text-lg font-bold text-emerald-400 font-mono-numbers mt-1">
                       {Math.round((monthlyTraffic * (currentConversion * 3.2)) / 100)} leads
                     </div>
@@ -407,7 +407,7 @@ export const ExperienceLibrary: React.FC = () => {
                     {/* Inner Center Hub */}
                     <div className="absolute inset-1/4 rounded-full bg-slate-950 border-2 border-amber-400/70 flex items-center justify-center z-10 shadow-inner">
                       <span className="text-[11px] font-bold text-white font-mono uppercase tracking-wider text-center">
-                        TEZPLAY<br /><span className="text-amber-400 text-[10px]">SPIN</span>
+                        Lead Games.com<br /><span className="text-amber-400 text-[10px]">SPIN</span>
                       </span>
                     </div>
                   </div>
@@ -456,7 +456,7 @@ export const ExperienceLibrary: React.FC = () => {
                     <div className="space-y-2 animate-fade-in">
                       <div className="text-xs font-mono font-bold text-emerald-400 uppercase">Code Unlocked!</div>
                       <div className="text-xl font-extrabold text-white font-mono bg-slate-900 border border-slate-800 px-4 py-2 rounded-lg">
-                        TEZPLAY-VIP-2026
+                        Lead Games.com-VIP-2026
                       </div>
                       <div className="text-[11px] text-slate-400">
                         100% Free Strategy Session + $300 Setup Credit

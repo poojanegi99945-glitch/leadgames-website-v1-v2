@@ -11,7 +11,6 @@ import {
   Phone,
   AlertCircle,
   Clock,
-  Sparkles,
   Check,
 } from 'lucide-react';
 import { submitProposal } from '../lib/submitProposal';
@@ -40,11 +39,13 @@ type ProposalFormData = z.infer<typeof proposalSchema>;
 interface ProposalSectionProps {
   preselectedGoal?: string;
   onSubmittedSuccess?: () => void;
+  isEmbedded?: boolean;
 }
 
 export const ProposalSection: React.FC<ProposalSectionProps> = ({
   preselectedGoal,
   onSubmittedSuccess,
+  isEmbedded = false,
 }) => {
   const [formStep, setFormStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -118,38 +119,31 @@ export const ProposalSection: React.FC<ProposalSectionProps> = ({
     }
   };
 
-  const isDev = import.meta.env.DEV;
-
   return (
-    <section id="proposal" className="section border-b border-[#E4E7F0] bg-white scroll-mt-14">
+    <section
+      id={isEmbedded ? undefined : 'proposal'}
+      className={`border-[#E4E7F0] bg-white scroll-mt-14 ${
+        isEmbedded ? 'py-7 sm:py-8' : 'section border-b'
+      }`}
+    >
       <div className="container">
-        {/* Development notice banner */}
-        {isDev && (
-          <div className="mb-8 p-3.5 rounded-xl bg-amber-50 border border-amber-200 text-xs text-amber-900 flex items-center justify-between">
-            <span className="font-mono flex items-center gap-1.5">
-              <Sparkles size={14} className="text-amber-600 shrink-0" />
-              <span>[DEV NOTICE]: Form is active. Submissions log safely to client console stub with simulated network delay.</span>
-            </span>
-          </div>
-        )}
-
         {/* Section Header matching Version 2 visual benchmark */}
-        <header className="section-heading text-center mx-auto mb-12 sm:mb-14">
+        <header className={`section-heading text-center mx-auto ${isEmbedded ? 'mb-7 sm:mb-8' : 'mb-12 sm:mb-14'}`}>
           <span className="eyebrow block mb-2">Start your campaign</span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0B1B3A] tracking-tight mb-3">
+          <h2 className={`${isEmbedded ? 'text-2xl sm:text-3xl' : 'text-3xl sm:text-4xl md:text-5xl'} font-extrabold text-[#0B1B3A] tracking-tight mb-3`}>
             Your Next Lead Should Tell You More Than Their Phone Number.
           </h2>
-          <p className="text-base sm:text-lg text-[#45516B] max-w-2xl mx-auto">
+          <p className={`${isEmbedded ? 'text-sm sm:text-base' : 'text-base sm:text-lg'} text-[#45516B] max-w-2xl mx-auto`}>
             Tell us about your goals and we'll propose an interactive campaign that captures intent,
             qualifies leads, and follows up automatically.
           </p>
         </header>
 
         {/* Two-Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+        <div className={`grid grid-cols-1 ${isEmbedded ? 'lg:grid-cols-1' : 'lg:grid-cols-12'} gap-10 lg:gap-12 items-start`}>
           {/* Left Column: What Happens Next & Direct Contact */}
-          <div className="lg:col-span-5 space-y-6">
-            <div className="bg-[#F8F9FD] rounded-2xl border border-[#E4E7F0] p-6 sm:p-8 shadow-xs space-y-6">
+          <div className={`${isEmbedded ? 'hidden' : 'lg:col-span-5'} space-y-6`}>
+            <div className="v2-panel-soft p-6 sm:p-8 space-y-6">
               <h3 className="text-lg font-extrabold text-[#0B1B3A] font-heading tracking-tight flex items-center gap-2">
                 <Clock size={18} className="text-[#5B3DF5]" />
                 <span>What Happens Next</span>
@@ -157,7 +151,7 @@ export const ProposalSection: React.FC<ProposalSectionProps> = ({
 
               <ol className="space-y-5 text-xs sm:text-sm">
                 <li className="flex items-start gap-3.5">
-                  <span className="w-7 h-7 rounded-xl bg-[#5B3DF5] text-white flex items-center justify-center font-extrabold text-xs shrink-0 shadow-xs mt-0.5">
+                  <span className="w-7 h-7 rounded-xl bg-[#5B3DF5] text-white flex items-center justify-center font-extrabold text-xs shrink-0 shadow-sm mt-0.5">
                     1
                   </span>
                   <div>
@@ -172,7 +166,7 @@ export const ProposalSection: React.FC<ProposalSectionProps> = ({
                 </li>
 
                 <li className="flex items-start gap-3.5">
-                  <span className="w-7 h-7 rounded-xl bg-[#5B3DF5] text-white flex items-center justify-center font-extrabold text-xs shrink-0 shadow-xs mt-0.5">
+                  <span className="w-7 h-7 rounded-xl bg-[#5B3DF5] text-white flex items-center justify-center font-extrabold text-xs shrink-0 shadow-sm mt-0.5">
                     2
                   </span>
                   <div>
@@ -187,7 +181,7 @@ export const ProposalSection: React.FC<ProposalSectionProps> = ({
                 </li>
 
                 <li className="flex items-start gap-3.5">
-                  <span className="w-7 h-7 rounded-xl bg-[#5B3DF5] text-white flex items-center justify-center font-extrabold text-xs shrink-0 shadow-xs mt-0.5">
+                  <span className="w-7 h-7 rounded-xl bg-[#5B3DF5] text-white flex items-center justify-center font-extrabold text-xs shrink-0 shadow-sm mt-0.5">
                     3
                   </span>
                   <div>
@@ -204,7 +198,7 @@ export const ProposalSection: React.FC<ProposalSectionProps> = ({
             </div>
 
             {/* Direct Contact Card */}
-            <div className="bg-white rounded-2xl border border-[#E4E7F0] p-6 shadow-xs space-y-3.5 text-xs">
+            <div className="v2-panel-soft p-6 space-y-3.5 text-xs">
               <strong className="font-extrabold text-[#0B1B3A] block font-heading text-sm">
                 Prefer direct outreach?
               </strong>
@@ -242,8 +236,8 @@ export const ProposalSection: React.FC<ProposalSectionProps> = ({
           </div>
 
           {/* Right Column: Conversational 3-Step Proposal Form */}
-          <div className="lg:col-span-7">
-            <div className="bg-white rounded-2xl border border-[#E4E7F0] p-6 sm:p-9 shadow-xl relative overflow-hidden">
+          <div className={isEmbedded ? '' : 'lg:col-span-7'}>
+            <div className="v2-panel p-5 sm:p-8 lg:p-9 relative overflow-hidden">
               {/* Top ambient highlight */}
               <div className="absolute top-0 right-0 w-60 h-60 bg-gradient-to-br from-[#5B3DF5]/5 to-transparent rounded-full blur-2xl pointer-events-none" />
 
@@ -325,10 +319,10 @@ export const ProposalSection: React.FC<ProposalSectionProps> = ({
                           autoComplete="name"
                           placeholder="e.g. Rahul Sharma"
                           {...register('name')}
-                          className={`w-full p-3 rounded-xl border text-xs sm:text-sm text-[#0B1B3A] bg-[#F8F9FD] focus:bg-white focus:outline-none transition-all placeholder:text-[#8A94A6] ${
+                          className={`v2-field w-full p-3 text-xs sm:text-sm placeholder:text-[#8A94A6] ${
                             errors.name
                               ? 'border-[#E5484D] ring-2 ring-[#E5484D]/10'
-                              : 'border-[#E4E7F0] focus:border-[#5B3DF5] focus:ring-4 focus:ring-[#5B3DF5]/10'
+                              : ''
                           }`}
                         />
                         {errors.name && (
@@ -353,10 +347,10 @@ export const ProposalSection: React.FC<ProposalSectionProps> = ({
                           autoComplete="email"
                           placeholder="rahul@company.com"
                           {...register('email')}
-                          className={`w-full p-3 rounded-xl border text-xs sm:text-sm text-[#0B1B3A] bg-[#F8F9FD] focus:bg-white focus:outline-none transition-all placeholder:text-[#8A94A6] ${
+                          className={`v2-field w-full p-3 text-xs sm:text-sm placeholder:text-[#8A94A6] ${
                             errors.email
                               ? 'border-[#E5484D] ring-2 ring-[#E5484D]/10'
-                              : 'border-[#E4E7F0] focus:border-[#5B3DF5] focus:ring-4 focus:ring-[#5B3DF5]/10'
+                              : ''
                           }`}
                         />
                         {errors.email && (
@@ -381,10 +375,10 @@ export const ProposalSection: React.FC<ProposalSectionProps> = ({
                           autoComplete="tel"
                           placeholder="+91 98765 43210"
                           {...register('phone')}
-                          className={`w-full p-3 rounded-xl border text-xs sm:text-sm text-[#0B1B3A] bg-[#F8F9FD] focus:bg-white focus:outline-none transition-all placeholder:text-[#8A94A6] ${
+                          className={`v2-field w-full p-3 text-xs sm:text-sm placeholder:text-[#8A94A6] ${
                             errors.phone
                               ? 'border-[#E5484D] ring-2 ring-[#E5484D]/10'
-                              : 'border-[#E4E7F0] focus:border-[#5B3DF5] focus:ring-4 focus:ring-[#5B3DF5]/10'
+                              : ''
                           }`}
                         />
                         {errors.phone && (
@@ -412,10 +406,10 @@ export const ProposalSection: React.FC<ProposalSectionProps> = ({
                           type="text"
                           placeholder="e.g. Apex Living or Dr. Health Clinic"
                           {...register('companyName')}
-                          className={`w-full p-3 rounded-xl border text-xs sm:text-sm text-[#0B1B3A] bg-[#F8F9FD] focus:bg-white focus:outline-none transition-all placeholder:text-[#8A94A6] ${
+                          className={`v2-field w-full p-3 text-xs sm:text-sm placeholder:text-[#8A94A6] ${
                             errors.companyName
                               ? 'border-[#E5484D] ring-2 ring-[#E5484D]/10'
-                              : 'border-[#E4E7F0] focus:border-[#5B3DF5] focus:ring-4 focus:ring-[#5B3DF5]/10'
+                              : ''
                           }`}
                         />
                         {errors.companyName && (
@@ -438,7 +432,7 @@ export const ProposalSection: React.FC<ProposalSectionProps> = ({
                           type="url"
                           placeholder="https://example.com"
                           {...register('website')}
-                          className="w-full p-3 rounded-xl border border-[#E4E7F0] text-xs sm:text-sm text-[#0B1B3A] bg-[#F8F9FD] focus:bg-white focus:border-[#5B3DF5] focus:ring-4 focus:ring-[#5B3DF5]/10 focus:outline-none transition-all placeholder:text-[#8A94A6]"
+                          className="v2-field w-full p-3 text-xs sm:text-sm placeholder:text-[#8A94A6]"
                         />
                       </div>
 
@@ -452,7 +446,7 @@ export const ProposalSection: React.FC<ProposalSectionProps> = ({
                         <select
                           id="industry"
                           {...register('industry')}
-                          className="w-full p-3 rounded-xl border border-[#E4E7F0] text-xs sm:text-sm text-[#0B1B3A] bg-[#F8F9FD] focus:bg-white focus:border-[#5B3DF5] focus:ring-4 focus:ring-[#5B3DF5]/10 focus:outline-none transition-all font-semibold"
+                          className="v2-field w-full p-3 text-xs sm:text-sm font-semibold"
                         >
                           <option value="Healthcare">Healthcare & Clinics</option>
                           <option value="Real Estate">Real Estate & Builders</option>
@@ -474,7 +468,7 @@ export const ProposalSection: React.FC<ProposalSectionProps> = ({
                         <label className="block text-xs font-bold text-[#0B1B3A] mb-2 font-heading">
                           What do you want to achieve? (Select all that apply) *
                         </label>
-                        <div className="grid grid-cols-2 gap-2 text-xs">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                           {[
                             'Generate leads',
                             'Qualify leads',
@@ -491,8 +485,8 @@ export const ProposalSection: React.FC<ProposalSectionProps> = ({
                                 onClick={() => handleGoalToggle(g)}
                                 className={`p-3 rounded-xl border text-left font-semibold transition-all flex items-center justify-between focus:outline-none ${
                                   isChecked
-                                    ? 'border-[#5B3DF5] bg-[#5B3DF5]/8 text-[#0B1B3A] shadow-2xs ring-1 ring-[#5B3DF5]'
-                                    : 'border-[#E4E7F0] bg-[#F8F9FD] hover:bg-white text-[#45516B]'
+                                    ? 'border-[#5B3DF5] bg-[#F1EEFF] text-[#0B1B3A] shadow-sm ring-1 ring-[#5B3DF5]'
+                                    : 'border-[#E4E7F0] bg-[#F8F9FD] hover:bg-white hover:border-[#CBD5E1] text-[#45516B]'
                                 }`}
                               >
                                 <span>{g}</span>
@@ -519,7 +513,7 @@ export const ProposalSection: React.FC<ProposalSectionProps> = ({
                         <select
                           id="budgetRange"
                           {...register('budgetRange')}
-                          className="w-full p-3 rounded-xl border border-[#E4E7F0] text-xs sm:text-sm text-[#0B1B3A] bg-[#F8F9FD] focus:bg-white focus:border-[#5B3DF5] focus:ring-4 focus:ring-[#5B3DF5]/10 focus:outline-none transition-all font-semibold"
+                          className="v2-field w-full p-3 text-xs sm:text-sm font-semibold"
                         >
                           <option value="Under ₹50k">Under ₹50,000 / month</option>
                           <option value="₹50k - ₹2L">₹50,000 – ₹2,00,000 / month</option>
@@ -540,7 +534,7 @@ export const ProposalSection: React.FC<ProposalSectionProps> = ({
                           rows={2}
                           placeholder="Tell us about your offer or specific qualification rules..."
                           {...register('notes')}
-                          className="w-full p-3 rounded-xl border border-[#E4E7F0] text-xs sm:text-sm text-[#0B1B3A] bg-[#F8F9FD] focus:bg-white focus:border-[#5B3DF5] focus:ring-4 focus:ring-[#5B3DF5]/10 focus:outline-none transition-all placeholder:text-[#8A94A6]"
+                          className="v2-field w-full p-3 text-xs sm:text-sm placeholder:text-[#8A94A6]"
                         />
                       </div>
 
@@ -606,7 +600,7 @@ export const ProposalSection: React.FC<ProposalSectionProps> = ({
                   )}
 
                   {/* Navigation Buttons */}
-                  <div className="pt-4 border-t border-[#E4E7F0] flex items-center justify-between">
+                  <div className="pt-4 border-t border-[#E4E7F0] flex items-center justify-between gap-3">
                     {formStep > 1 ? (
                       <button
                         type="button"

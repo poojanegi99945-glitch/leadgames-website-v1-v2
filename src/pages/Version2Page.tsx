@@ -55,7 +55,7 @@ export const Version2Page: React.FC = () => {
           </Link>
           <a
             href="/tezplay-project.zip"
-            download="tezplay-project.zip"
+            download="leadgames-project.zip"
             className="bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded text-white font-medium flex items-center gap-1 transition-colors"
           >
             <Download size={13} />
@@ -67,9 +67,9 @@ export const Version2Page: React.FC = () => {
       {/* Header */}
       <header className="site-header">
         <div className="nav-shell">
-          <Link to="/v2" className="logo" aria-label="TezPlay home">
+          <Link to="/v2" className="logo" aria-label="Lead Games.com home">
             <BrandMark />
-            <span>TezPlay</span>
+            <span>Lead Games.com</span>
           </Link>
 
           <nav className="desktop-nav" aria-label="Main navigation">
@@ -177,7 +177,7 @@ export const Version2Page: React.FC = () => {
           <div className="container">
             <header className="section-heading">
               <span className="eyebrow">Why interactive</span>
-              <h2>Static Forms Capture Details. TezPlay Captures Intent.</h2>
+              <h2>Static Forms Capture Details. Lead Games.com Captures Intent.</h2>
               <p>
                 A form tells you who submitted. An interactive experience tells
                 you what they need and how ready they are.
@@ -520,7 +520,7 @@ export const Version2Page: React.FC = () => {
           <div>
             <div className="logo mb-3">
               <BrandMark />
-              <span className="font-bold text-white text-base ml-1">TezPlay</span>
+              <span className="font-bold text-white text-base ml-1">Lead Games.com</span>
             </div>
             <p>Interactive campaigns that capture, qualify and convert leads.</p>
             <address className="mt-2 text-xs font-mono not-italic">
@@ -572,7 +572,7 @@ export const Version2Page: React.FC = () => {
             <Link to="/v2" className="text-[#5B3DF5] font-semibold">
               Version 2 (Funnels Playbook)
             </Link>
-            <a href="/tezplay-project.zip" download="tezplay-project.zip">
+            <a href="/tezplay-project.zip" download="leadgames-project.zip">
               Download Full Project (ZIP)
             </a>
           </div>
@@ -585,7 +585,7 @@ export const Version2Page: React.FC = () => {
         </div>
 
         <div className="container footer-bottom">
-          © {new Date().getFullYear()} TezPlay. All rights reserved.
+          © {new Date().getFullYear()} Lead Games.com. All rights reserved.
         </div>
       </footer>
     </div>

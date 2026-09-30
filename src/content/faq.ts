@@ -5,12 +5,12 @@ export interface FaqItem {
 
 export const faqList: FaqItem[] = [
   {
-    q: 'What does TezPlay do?',
+    q: 'What does Lead Games.com do?',
     a: 'We design, build and manage interactive lead-generation campaigns (quizzes, assessments, calculators, games and recommendation funnels) that capture and qualify leads and automate follow-up.',
   },
   {
-    q: 'Is TezPlay software I can subscribe to?',
-    a: 'No. TezPlay is a done-for-you service. We build, launch and manage the campaign with you.',
+    q: 'Is Lead Games.com software I can subscribe to?',
+    a: 'No. Lead Games.com is a done-for-you service. We build, launch and manage the campaign with you.',
   },
   {
     q: 'What is an interactive lead funnel?',

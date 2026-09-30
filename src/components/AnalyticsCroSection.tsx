@@ -25,7 +25,7 @@ export const AnalyticsCroSection: React.FC = () => {
             Understand What Happens Between the Click and the Conversion
           </h2>
           <p className="mt-3.5 text-base text-slate-300">
-            Static analytics only tell you that 98% of people bounced. TezPlay gives you full question-level visibility, intent distribution, and lead quality attribution.
+            Static analytics only tell you that 98% of people bounced. Lead Games.com gives you full question-level visibility, intent distribution, and lead quality attribution.
           </p>
         </div>
 
@@ -36,7 +36,7 @@ export const AnalyticsCroSection: React.FC = () => {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-5 border-b border-slate-800">
             <div>
               <div className="text-xs font-mono text-indigo-400 uppercase tracking-wider">
-                TezPlay Funnel Analytics
+                Lead Games.com Funnel Analytics
               </div>
               <div className="text-lg font-bold text-white font-display mt-0.5">
                 Campaign: Q3 Global Growth & Lead Qualification Funnel

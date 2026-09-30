@@ -83,7 +83,7 @@ export const AILeadQualification: React.FC = () => {
             Stop Treating Every Lead the Same.
           </h2>
           <p className="mt-3.5 text-base text-slate-300">
-            TezPlay algorithms analyze responses, buying authority, timeline, and zero-party intent to calculate precise lead intelligence in real time.
+            Lead Games.com algorithms analyze responses, buying authority, timeline, and zero-party intent to calculate precise lead intelligence in real time.
           </p>
         </div>
 
@@ -224,7 +224,7 @@ export const AILeadQualification: React.FC = () => {
               {/* Main Score Display */}
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
-                  <div className="text-xs text-slate-400">TezPlay AI Lead Score</div>
+                  <div className="text-xs text-slate-400">Lead Games.com AI Lead Score</div>
                   <div className="text-3xl font-extrabold text-white font-mono-numbers mt-1 flex items-baseline gap-1">
                     <span>{score}</span>
                     <span className="text-sm font-normal text-slate-400">/ 100</span>

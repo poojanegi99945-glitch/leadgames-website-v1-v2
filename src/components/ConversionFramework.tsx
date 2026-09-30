@@ -50,7 +50,7 @@ export const ConversionFramework: React.FC = () => {
       icon: Filter,
       summary: 'Intent & Fit Analysis',
       channels: ['Budget Bracket', 'Buying Urgency', 'Project Scope', 'Specific Constraints'],
-      whatHappens: 'TezPlay captures explicit buying signals so you know exactly which leads match your Ideal Customer Profile.',
+      whatHappens: 'Lead Games.com captures explicit buying signals so you know exactly which leads match your Ideal Customer Profile.',
       metricUplift: 'Eliminates 90% of Unqualified Tyre-Kickers',
     },
     {

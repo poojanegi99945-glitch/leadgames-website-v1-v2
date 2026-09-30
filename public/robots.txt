@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tezplay.com/sitemap.xml
+Sitemap: https://leadgames.com/sitemap.xml

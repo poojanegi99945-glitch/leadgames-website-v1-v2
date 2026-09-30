@@ -7,7 +7,7 @@ export const PrivacyPolicyPage: React.FC = () => {
       <div className="max-w-2xl w-full card-soft p-8 bg-white space-y-4">
         <a href="/" className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#5B3DF5] mb-2">
           <ArrowLeft className="w-3.5 h-3.5" />
-          <span>Back to TezPlay Home</span>
+          <span>Back to Lead Games.com Home</span>
         </a>
 
         <h1 className="text-2xl font-bold text-[#0B1B3A]">Privacy Policy</h1>
@@ -17,7 +17,7 @@ export const PrivacyPolicyPage: React.FC = () => {
         </div>
 
         <p className="text-xs text-[#45516B] leading-relaxed">
-          TezPlay is committed to protecting your personal information. When you request a proposal or participate in our client campaigns, contact information is collected solely for qualification and follow-up purposes upon explicit consent.
+          Lead Games.com is committed to protecting your personal information. When you request a proposal or participate in our client campaigns, contact information is collected solely for qualification and follow-up purposes upon explicit consent.
         </p>
 
         <p className="text-xs text-[#45516B] leading-relaxed">

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { XCircle, CheckCircle2, AlertTriangle, Sparkles, User, Mail, Phone, ArrowRight, ShieldCheck, Flame } from 'lucide-react';
 
 export const ProblemComparison: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'traditional' | 'tezplay'>('tezplay');
+  const [activeTab, setActiveTab] = useState<'traditional' | 'Lead Games.com'>('Lead Games.com');
 
   return (
     <section className="py-20 border-b border-slate-800/80 relative">
@@ -15,10 +15,10 @@ export const ProblemComparison: React.FC = () => {
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-display">
             A Form Tells You Who They Are. <br className="hidden sm:inline" />
-            <span className="text-indigo-400">TezPlay Helps You Understand What They Need.</span>
+            <span className="text-indigo-400">Lead Games.com Helps You Understand What They Need.</span>
           </h2>
           <p className="mt-3.5 text-base text-slate-300">
-            Static web forms suffer from 80%+ bounce rates and low buyer qualification. TezPlay engages visitors with interactive micro-steps, qualifying their intent before your sales reps ever dial.
+            Static web forms suffer from 80%+ bounce rates and low buyer qualification. Lead Games.com engages visitors with interactive micro-steps, qualifying their intent before your sales reps ever dial.
           </p>
         </div>
 
@@ -86,7 +86,7 @@ export const ProblemComparison: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Card: TezPlay Interactive Funnel */}
+          {/* Right Card: Lead Games.com Interactive Funnel */}
           <div className="rounded-2xl border border-indigo-500/40 bg-gradient-to-b from-indigo-950/20 via-slate-900/70 to-slate-950 p-6 sm:p-8 flex flex-col justify-between shadow-xl shadow-indigo-950/30 relative">
             <div className="absolute -top-3 right-6 bg-indigo-600 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-0.5 rounded-full shadow-md">
               High-Converting Standard
@@ -97,7 +97,7 @@ export const ProblemComparison: React.FC = () => {
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-5 h-5 text-emerald-400" />
                   <span className="text-base font-bold text-white font-display">
-                    TezPlay Interactive Funnel
+                    Lead Games.com Interactive Funnel
                   </span>
                 </div>
                 <span className="text-xs text-emerald-400 font-medium bg-emerald-950/60 border border-emerald-900/50 px-2.5 py-0.5 rounded-full">

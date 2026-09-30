@@ -201,7 +201,7 @@ export const SampleExperiencesSection: React.FC = () => {
 
         {/* Format Selector Tabs */}
         <div className="flex justify-center mb-8">
-          <div className="inline-flex flex-wrap items-center justify-center gap-1.5 p-1.5 bg-[#EEF2F8] border border-[#E4E7F0] rounded-2xl max-w-full shadow-inner">
+          <div className="v2-control-surface inline-flex flex-wrap items-center justify-center gap-1.5 p-1.5 max-w-full">
             {tabs.map((tab) => {
               const Icon = tab.icon;
               const isActive = activeTab === tab.id;
@@ -210,7 +210,7 @@ export const SampleExperiencesSection: React.FC = () => {
                   key={tab.id}
                   type="button"
                   onClick={() => setActiveTab(tab.id as any)}
-                  className={`inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition-all focus-visible:outline-2 focus-visible:outline-[#5B3DF5] ${
+                  className={`inline-flex min-h-10 items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition-all focus-visible:outline-2 focus-visible:outline-[#5B3DF5] ${
                     isActive
                       ? 'bg-[#0B1B3A] text-white shadow-sm ring-1 ring-[#0B1B3A]'
                       : 'text-[#45516B] hover:text-[#0B1B3A] hover:bg-white/80'
@@ -225,7 +225,7 @@ export const SampleExperiencesSection: React.FC = () => {
         </div>
 
         {/* Interactive Playable Sandbox Box matching V2 card aesthetic */}
-        <div className="bg-white rounded-2xl border border-[#E4E7F0] shadow-xl p-6 sm:p-10 min-h-[440px] flex items-center justify-center max-w-3xl mx-auto relative overflow-hidden">
+        <div className="v2-panel p-5 sm:p-8 lg:p-10 min-h-[440px] flex items-center justify-center max-w-3xl mx-auto relative overflow-hidden">
           {/* Subtle ambient background glow */}
           <div className="absolute top-0 right-0 w-72 h-72 bg-gradient-to-br from-[#5B3DF5]/5 to-transparent rounded-full blur-2xl pointer-events-none" />
 
@@ -241,7 +241,7 @@ export const SampleExperiencesSection: React.FC = () => {
               </div>
 
               {/* Wheel Container */}
-              <div className="relative w-52 h-52 sm:w-60 sm:h-60 mx-auto rounded-full border-4 border-[#0B1B3A] p-1.5 shadow-xl flex items-center justify-center bg-white">
+              <div className="relative w-52 h-52 sm:w-60 sm:h-60 mx-auto rounded-full border-4 border-[#0B1B3A] p-1.5 shadow-[0_18px_44px_rgba(11,27,58,0.18)] flex items-center justify-center bg-white">
                 {/* Pointer with realistic needle styling */}
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-20 w-0 h-0 border-l-[9px] border-l-transparent border-r-[9px] border-r-transparent border-t-[16px] border-t-[#FF7A1A] drop-shadow-md" />
 
@@ -252,7 +252,7 @@ export const SampleExperiencesSection: React.FC = () => {
                 >
                   <div className="absolute inset-0 bg-[conic-gradient(#5B3DF5_0deg_60deg,#3B82F6_60deg_120deg,#12A150_120deg_180deg,#FF7A1A_180deg_240deg,#8B5CF6_240deg_300deg,#EC4899_300deg_360deg)] opacity-95" />
                   <div className="absolute inset-1/4 rounded-full bg-white border-2 border-[#E4E7F0] flex flex-col items-center justify-center font-extrabold text-[11px] text-[#0B1B3A] shadow-md">
-                    <span>TEZPLAY</span>
+                    <span>Lead Games.com</span>
                     <span className="text-[9px] text-[#5B3DF5] font-normal">SPIN</span>
                   </div>
                 </div>
@@ -365,7 +365,7 @@ export const SampleExperiencesSection: React.FC = () => {
                             setQuizAnswer1(opt);
                             setQuizStep(1);
                           }}
-                          className="p-3 text-left rounded-xl border border-[#E4E7F0] hover:border-[#5B3DF5] hover:bg-[#F8F9FD] bg-white font-semibold text-[#0B1B3A] transition-all flex items-center justify-between group shadow-2xs"
+                          className="p-3 text-left rounded-xl border border-[#E4E7F0] hover:border-[#5B3DF5] hover:bg-[#F8F9FD] bg-white font-semibold text-[#0B1B3A] transition-all flex items-center justify-between group shadow-sm hover:shadow-md"
                         >
                           <span>{opt}</span>
                           <ArrowRight
@@ -393,7 +393,7 @@ export const SampleExperiencesSection: React.FC = () => {
                           setQuizAnswer2(opt);
                           setQuizStep(2);
                         }}
-                        className="p-3 text-left rounded-xl border border-[#E4E7F0] hover:border-[#5B3DF5] hover:bg-[#F8F9FD] bg-white font-semibold text-[#0B1B3A] transition-all flex items-center justify-between group shadow-2xs"
+                        className="p-3 text-left rounded-xl border border-[#E4E7F0] hover:border-[#5B3DF5] hover:bg-[#F8F9FD] bg-white font-semibold text-[#0B1B3A] transition-all flex items-center justify-between group shadow-sm hover:shadow-md"
                       >
                         <span>{opt}</span>
                         <ArrowRight
@@ -486,7 +486,7 @@ export const SampleExperiencesSection: React.FC = () => {
                 </div>
               </div>
 
-              <div className="p-4 bg-gradient-to-r from-[#F8F9FD] to-[#EEF2F8] border border-[#E4E7F0] rounded-xl text-xs flex justify-between items-center shadow-xs">
+              <div className="p-4 bg-gradient-to-r from-[#F8F9FD] to-[#EEF2F8] border border-[#E4E7F0] rounded-xl text-xs flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 shadow-sm">
                 <div>
                   <span className="text-[#45516B] block text-[11px] font-medium">
                     Projected Qualified Leads / mo:
@@ -524,7 +524,7 @@ export const SampleExperiencesSection: React.FC = () => {
                     key={c.id}
                     type="button"
                     onClick={() => handleCardClick(i)}
-                    className={`h-16 rounded-xl text-xs font-bold transition-all border flex items-center justify-center ${
+                    className={`h-16 rounded-xl text-xs font-bold transition-all border flex items-center justify-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5B3DF5] ${
                       c.flipped || c.matched
                         ? 'bg-[#5B3DF5] text-white border-[#5B3DF5] shadow-xs scale-95'
                         : 'bg-[#F8F9FD] text-[#45516B] border-[#E4E7F0] hover:bg-white hover:border-[#CBD5E1]'
@@ -560,13 +560,13 @@ export const SampleExperiencesSection: React.FC = () => {
                 <span className="sample-badge">Sample Demo</span>
               </div>
 
-              <div className="grid grid-cols-3 gap-2.5 text-xs">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
                 <div>
                   <label className="text-[11px] text-[#0B1B3A] block mb-1 font-bold">Intent Level:</label>
                   <select
                     value={assessQ1}
                     onChange={(e) => setAssessQ1(e.target.value)}
-                    className="w-full bg-[#F8F9FD] border border-[#E4E7F0] rounded-xl p-2 text-xs font-semibold focus:bg-white focus:outline-none focus:border-[#5B3DF5]"
+                    className="v2-field w-full p-2 text-xs font-semibold"
                   >
                     <option value="High">High Intent</option>
                     <option value="Moderate">Moderate</option>
@@ -578,7 +578,7 @@ export const SampleExperiencesSection: React.FC = () => {
                   <select
                     value={assessQ2}
                     onChange={(e) => setAssessQ2(e.target.value)}
-                    className="w-full bg-[#F8F9FD] border border-[#E4E7F0] rounded-xl p-2 text-xs font-semibold focus:bg-white focus:outline-none focus:border-[#5B3DF5]"
+                    className="v2-field w-full p-2 text-xs font-semibold"
                   >
                     <option value="Yes">Yes, Approved</option>
                     <option value="Exploring">Exploring</option>
@@ -590,7 +590,7 @@ export const SampleExperiencesSection: React.FC = () => {
                   <select
                     value={assessQ3}
                     onChange={(e) => setAssessQ3(e.target.value)}
-                    className="w-full bg-[#F8F9FD] border border-[#E4E7F0] rounded-xl p-2 text-xs font-semibold focus:bg-white focus:outline-none focus:border-[#5B3DF5]"
+                    className="v2-field w-full p-2 text-xs font-semibold"
                   >
                     <option value="Immediate">Immediate (&lt;7d)</option>
                     <option value="Later">Later (30d+)</option>
@@ -598,7 +598,7 @@ export const SampleExperiencesSection: React.FC = () => {
                 </div>
               </div>
 
-              <div className="p-4 bg-gradient-to-r from-[#F8F9FD] to-[#EEF2F8] border border-[#E4E7F0] rounded-xl flex items-center justify-between shadow-xs">
+              <div className="p-4 bg-gradient-to-r from-[#F8F9FD] to-[#EEF2F8] border border-[#E4E7F0] rounded-xl flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 shadow-sm">
                 <div>
                   <div className="text-[11px] text-[#45516B] font-semibold uppercase tracking-wider">
                     Dynamic Assessment Score
@@ -623,7 +623,7 @@ export const SampleExperiencesSection: React.FC = () => {
         </div>
 
         {/* Note under grid */}
-        <p className="mt-5 text-center text-xs text-[#6B7A99] flex items-center justify-center gap-1.5">
+        <p className="mt-5 text-center text-xs text-[#6B7A99] flex flex-col sm:flex-row items-center justify-center gap-1.5">
           <Info size={13} className="text-[#5B3DF5]" />
           <span>
             Every interactive experience is tailored around your brand, offer, and custom

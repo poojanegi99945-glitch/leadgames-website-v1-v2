@@ -20,14 +20,14 @@ export const PlatformVsService: React.FC<PlatformVsServiceProps> = ({ onStartFun
             Build It Yourself. Or Let Us Build It for You.
           </h2>
           <p className="mt-3.5 text-base text-slate-300">
-            Whether you need a self-serve platform for your in-house team or a complete done-for-you conversion strategy, TezPlay delivers.
+            Whether you need a self-serve platform for your in-house team or a complete done-for-you conversion strategy, Lead Games.com delivers.
           </p>
         </div>
 
         {/* Dual Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           
-          {/* Option 1: TezPlay Platform */}
+          {/* Option 1: Lead Games.com Platform */}
           <div className="rounded-2xl border border-slate-800 bg-slate-950 p-8 flex flex-col justify-between hover:border-slate-700 transition-all">
             <div>
               <div className="flex items-center justify-between pb-4 border-b border-slate-800 mb-6">
@@ -36,7 +36,7 @@ export const PlatformVsService: React.FC<PlatformVsServiceProps> = ({ onStartFun
                     <Layers className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-white font-display">TezPlay Platform</h3>
+                    <h3 className="text-lg font-bold text-white font-display">Lead Games.com Platform</h3>
                     <p className="text-xs text-slate-400">Self-Serve No-Code Software</p>
                   </div>
                 </div>

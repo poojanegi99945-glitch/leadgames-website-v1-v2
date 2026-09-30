@@ -82,7 +82,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onProposalClick }) => {
       >
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           
-          {/* Left: TezPlay wordmark + Play triangle spark mark */}
+          {/* Left: Lead Games.com wordmark + Play triangle spark mark */}
           <a href="#top" className="flex items-center gap-2.5 group">
             <svg
               className="w-7 h-7 shrink-0 text-[#5B3DF5]"
@@ -153,7 +153,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onProposalClick }) => {
           <div className="hidden md:flex items-center gap-3">
             <a
               href="/tezplay-project.zip"
-              download="tezplay-project.zip"
+              download="leadgames-project.zip"
               className="text-xs font-semibold text-[#5B3DF5] bg-[#5B3DF5]/10 hover:bg-[#5B3DF5]/20 px-3 py-1.5 rounded-full transition-colors flex items-center gap-1.5"
               title="Download full project source code as ZIP"
             >
