@@ -19,7 +19,7 @@ export function LeadScoreGauge({ score }: { score: number }) {
       role="img"
       aria-label={`Lead score ${score} out of 100`}
     >
-      <span>
+      <span className="score-gauge-value">
         <strong>{score}</strong>
         <small>/100</small>
       </span>
