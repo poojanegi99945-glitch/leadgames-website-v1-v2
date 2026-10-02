@@ -7,14 +7,11 @@ import {
   ArrowLeft,
   CheckCircle2,
   ShieldCheck,
-  Mail,
-  Phone,
   AlertCircle,
   Clock,
   Check,
 } from 'lucide-react';
 import { submitProposal } from '../lib/submitProposal';
-import { siteConfig } from '../content/site';
 
 const proposalSchema = z.object({
   name: z.string().min(2, 'Please enter your full name'),
@@ -197,42 +194,6 @@ export const ProposalSection: React.FC<ProposalSectionProps> = ({
               </ol>
             </div>
 
-            {/* Direct Contact Card */}
-            <div className="v2-panel-soft p-6 space-y-3.5 text-xs">
-              <strong className="font-extrabold text-[#0B1B3A] block font-heading text-sm">
-                Prefer direct outreach?
-              </strong>
-              <div className="flex items-center gap-2.5 text-[#45516B]">
-                <div className="w-7 h-7 rounded-lg bg-[#5B3DF5]/10 text-[#5B3DF5] flex items-center justify-center shrink-0">
-                  <Mail size={14} />
-                </div>
-                <span>
-                  Email:{' '}
-                  <a
-                    href={`mailto:${siteConfig.contact.email}`}
-                    className="text-[#0B1B3A] font-bold font-mono hover:text-[#5B3DF5] transition-colors"
-                  >
-                    {siteConfig.contact.email}
-                  </a>
-                </span>
-              </div>
-              <div className="flex items-center gap-2.5 text-[#45516B]">
-                <div className="w-7 h-7 rounded-lg bg-[#12A150]/10 text-[#12A150] flex items-center justify-center shrink-0">
-                  <Phone size={14} />
-                </div>
-                <span>
-                  WhatsApp:{' '}
-                  <a
-                    href={`https://wa.me/${siteConfig.contact.whatsapp.replace(/[^0-9]/g, '')}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#0B1B3A] font-bold font-mono hover:text-[#12A150] transition-colors"
-                  >
-                    {siteConfig.contact.whatsapp}
-                  </a>
-                </span>
-              </div>
-            </div>
           </div>
 
           {/* Right Column: Conversational 3-Step Proposal Form */}
@@ -277,8 +238,7 @@ export const ProposalSection: React.FC<ProposalSectionProps> = ({
                       Thank you! Our strategy team will review your goals and reply within 1 business day.
                     </p>
                     <p className="text-xs text-[#6B7A99]">
-                      For urgent questions, feel free to contact us directly at{' '}
-                      <span className="font-mono text-[#5B3DF5] font-bold">{siteConfig.contact.email}</span>.
+                      For urgent questions, feel free to contact us directly.
                     </p>
                   </div>
                   <button
