@@ -1,6 +1,5 @@
 import React from 'react';
-import { siteConfig } from '../content/site';
-import { Download, ArrowUp, Mail, Phone, MapPin } from 'lucide-react';
+import { Download, ArrowUp, Sparkles } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -10,10 +9,10 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-[#07162F] text-white/80 border-t border-white/10 text-xs">
       <div className="container py-14 sm:py-16">
-        {/* Main Columns Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-10 sm:gap-x-10 mb-12 sm:mb-14">
-          {/* Col 1: Wordmark & Tagline */}
-          <div className="col-span-2 space-y-4">
+        {/* Main Footer Panel */}
+        <div className="mb-12 sm:mb-14 rounded-2xl border border-white/10 bg-white/[0.035] px-5 py-6 sm:px-7 sm:py-7">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-7">
+            <div className="space-y-4 max-w-xl">
             <img src="/lead-games-logo.png" alt="Lead Games.com" className="h-12 w-auto rounded-md bg-white px-2 py-1" />
 
             <p className="text-sm text-white/70 leading-relaxed max-w-sm">
@@ -27,150 +26,13 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Col 2: Services */}
-          <div className="space-y-3">
-            <div className="text-xs font-extrabold text-white uppercase tracking-[0.12em] font-heading">
-              Services
-            </div>
-            <ul className="space-y-2">
-              <li>
-                <a href="#sec-services" className="text-white/68 hover:text-white transition-colors">
-                  Gamified Lead Gen
-                </a>
-              </li>
-              <li>
-                <a href="#sec-services" className="text-white/68 hover:text-white transition-colors">
-                  Assessments & Quizzes
-                </a>
-              </li>
-              <li>
-                <a href="#sec-scoring" className="text-white/68 hover:text-white transition-colors">
-                  Lead Scoring Rules
-                </a>
-              </li>
-              <li>
-                <a href="#sec-automation" className="text-white/68 hover:text-white transition-colors">
-                  WhatsApp Automation
-                </a>
-              </li>
-              <li>
-                <a href="#sec-analytics" className="text-white/68 hover:text-white transition-colors">
-                  Campaign Analytics & CRO
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Col 3: Samples */}
-          <div className="space-y-3">
-            <div className="text-xs font-extrabold text-white uppercase tracking-[0.12em] font-heading">
-              Live Samples
-            </div>
-            <ul className="space-y-2">
-              <li>
-                <a href="#sec-samples" className="text-white/68 hover:text-white transition-colors">
-                  Spin & Win
-                </a>
-              </li>
-              <li>
-                <a href="#sec-samples" className="text-white/68 hover:text-white transition-colors">
-                  Scratch & Win
-                </a>
-              </li>
-              <li>
-                <a href="#sec-samples" className="text-white/68 hover:text-white transition-colors">
-                  Quiz Funnel
-                </a>
-              </li>
-              <li>
-                <a href="#sec-samples" className="text-white/68 hover:text-white transition-colors">
-                  ROI Calculator
-                </a>
-              </li>
-              <li>
-                <a href="#sec-samples" className="text-white/68 hover:text-white transition-colors">
-                  Memory Match
-                </a>
-              </li>
-              <li>
-                <a href="#sec-samples" className="text-white/68 hover:text-white transition-colors">
-                  Assessment Gauge
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Col 4: Industries */}
-          <div className="space-y-3">
-            <div className="text-xs font-extrabold text-white uppercase tracking-[0.12em] font-heading">
-              Industries
-            </div>
-            <ul className="space-y-2">
-              <li>
-                <a href="#sec-industries" className="text-white/68 hover:text-white transition-colors">
-                  Healthcare & Clinics
-                </a>
-              </li>
-              <li>
-                <a href="#sec-industries" className="text-white/68 hover:text-white transition-colors">
-                  Real Estate & Builders
-                </a>
-              </li>
-              <li>
-                <a href="#sec-industries" className="text-white/68 hover:text-white transition-colors">
-                  SaaS & ERP
-                </a>
-              </li>
-              <li>
-                <a href="#sec-industries" className="text-white/68 hover:text-white transition-colors">
-                  Education & EdTech
-                </a>
-              </li>
-              <li>
-                <a href="#sec-industries" className="text-white/68 hover:text-white transition-colors">
-                  Automotive
-                </a>
-              </li>
-              <li>
-                <a href="#sec-industries" className="text-white/68 hover:text-white transition-colors">
-                  E-commerce Brands
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Col 5: Company & Direct Contact */}
-          <div className="space-y-3">
-            <div className="text-xs font-extrabold text-white uppercase tracking-[0.12em] font-heading">
-              Direct Contact
-            </div>
-            <ul className="space-y-2.5 text-[11px] text-white/70">
-              <li className="flex items-start gap-2">
-                <Mail size={12} className="text-[#5B3DF5] shrink-0" />
-                <a
-                  href={`mailto:${siteConfig.contact.email}`}
-                  className="font-mono text-white/90 hover:text-white transition-colors"
-                >
-                  {siteConfig.contact.email}
-                </a>
-              </li>
-              <li className="flex items-start gap-2">
-                <Phone size={12} className="text-[#12A150] shrink-0" />
-                <a
-                  href={`https://wa.me/${siteConfig.contact.whatsapp.replace(/[^0-9]/g, '')}`}
-                  className="font-mono text-white/90 hover:text-white transition-colors"
-                >
-                  {siteConfig.contact.whatsapp}
-                </a>
-              </li>
-              <li className="flex items-start gap-2">
-                <MapPin size={12} className="text-[#FF7A1A] shrink-0" />
-                <span className="text-white/80">{siteConfig.contact.address}</span>
-              </li>
-              <li className="pt-1 text-[10px] text-white/50 font-mono">
-                GST: {siteConfig.contact.registration}
-              </li>
-            </ul>
+            <a
+              href="#sec-proposal"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-white text-[#07162F] px-5 py-3 text-xs font-extrabold uppercase tracking-[0.08em] shadow-sm transition-all hover:-translate-y-0.5 hover:bg-[#F3F6FF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white/70"
+            >
+              <Sparkles size={15} />
+              <span>Request Proposal</span>
+            </a>
           </div>
         </div>
 
