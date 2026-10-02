@@ -39,7 +39,7 @@ export const Footer: React.FC = () => {
 
             <a
               href="#sec-proposal"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-5 py-3.5 text-xs font-extrabold uppercase tracking-[0.08em] text-[#07162F] shadow-[0_16px_35px_rgba(0,0,0,0.2)] transition-all hover:-translate-y-0.5 hover:bg-[#F3F6FF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white/70 sm:w-auto"
+              className="btn-primary w-full px-6 py-3 text-sm font-bold shadow-lg hover:shadow-xl sm:w-auto"
             >
               <Sparkles size={15} />
               <span>Request Proposal</span>
