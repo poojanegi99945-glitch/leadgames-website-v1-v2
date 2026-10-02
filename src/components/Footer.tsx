@@ -1,5 +1,5 @@
 import React from 'react';
-import { Download, ArrowUp, Sparkles } from 'lucide-react';
+import { ArrowUp, Sparkles } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -8,27 +8,38 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className="bg-[#07162F] text-white/80 border-t border-white/10 text-xs">
-      <div className="container py-14 sm:py-16">
+      <div className="container py-12 sm:py-16">
         {/* Main Footer Panel */}
-        <div className="mb-12 sm:mb-14 rounded-2xl border border-white/10 bg-white/[0.035] px-5 py-6 sm:px-7 sm:py-7">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-7">
-            <div className="space-y-4 max-w-xl">
-            <img src="/lead-games-logo.png" alt="Lead Games.com" className="h-12 w-auto rounded-md bg-white px-2 py-1" />
+        <div className="relative mb-9 sm:mb-11 overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.09),rgba(255,255,255,0.025))] px-5 py-6 shadow-[0_24px_80px_rgba(0,0,0,0.22)] sm:px-8 sm:py-8">
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/35 to-transparent" />
+          <div className="flex flex-col gap-7 lg:flex-row lg:items-center lg:justify-between">
+            <div className="space-y-4 max-w-2xl">
+              <img
+                src="/lead-games-logo.png"
+                alt="Lead Games.com"
+                className="h-12 w-auto rounded-lg bg-white px-2.5 py-1.5 shadow-sm"
+              />
 
-            <p className="text-sm text-white/70 leading-relaxed max-w-sm">
-              Interactive campaigns that capture, qualify, and convert leads. Done-for-you lead
-              generation, scoring rules, and automated follow-up.
-            </p>
+              <p className="text-sm sm:text-[15px] text-white/72 leading-relaxed max-w-xl">
+                Interactive campaigns that capture, qualify, and convert leads. Done-for-you lead
+                generation, scoring rules, and automated follow-up.
+              </p>
 
-            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.06] border border-white/10 text-[11px] text-white/65 font-mono">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#12A150]" />
-              <span>Capture → Qualify → Score → Automate</span>
+              <div className="flex flex-wrap gap-2">
+                {['Capture', 'Qualify', 'Score', 'Automate'].map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-white/10 bg-white/[0.055] px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.08em] text-white/68"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
 
             <a
               href="#sec-proposal"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-white text-[#07162F] px-5 py-3 text-xs font-extrabold uppercase tracking-[0.08em] shadow-sm transition-all hover:-translate-y-0.5 hover:bg-[#F3F6FF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white/70"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-5 py-3.5 text-xs font-extrabold uppercase tracking-[0.08em] text-[#07162F] shadow-[0_16px_35px_rgba(0,0,0,0.2)] transition-all hover:-translate-y-0.5 hover:bg-[#F3F6FF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white/70 sm:w-auto"
             >
               <Sparkles size={15} />
               <span>Request Proposal</span>
@@ -36,31 +47,23 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom Bar: Copyright, Legal, Project Download & Back to Top */}
-        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-white/55">
+        {/* Bottom Bar: Copyright, Legal & Back to Top */}
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-7 text-[11px] text-white/55 sm:flex-row">
           <div>
             © {new Date().getFullYear()} Lead Games.com Interactive Agency. All rights reserved.
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
-            <a href="/privacy-policy" className="hover:text-white transition-colors">
+            <a href="/privacy-policy" className="transition-colors hover:text-white">
               Privacy Policy
             </a>
-            <a href="/terms" className="hover:text-white transition-colors">
+            <a href="/terms" className="transition-colors hover:text-white">
               Terms of Service
-            </a>
-            <a
-              href="/tezplay-project.zip"
-              download="leadgames-project.zip"
-              className="inline-flex items-center gap-1 text-[#FF7A1A] hover:text-[#FFA052] font-semibold transition-colors"
-            >
-              <Download size={12} />
-              <span>Project Archive</span>
             </a>
             <button
               type="button"
               onClick={scrollToTop}
-              className="inline-flex items-center gap-1 text-white/70 hover:text-white transition-colors sm:ml-2"
+              className="inline-flex items-center gap-1 rounded-full border border-white/10 px-3 py-1.5 text-white/70 transition-colors hover:border-white/25 hover:bg-white/[0.045] hover:text-white sm:ml-2"
               aria-label="Back to top of page"
             >
               <ArrowUp size={12} />
